@@ -1,0 +1,141 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// b-control
+////////////////////////////////////////////////
+
+// b-control-info
+//=============================================
+.b-control-info-1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $var-font-2;
+  @include font-size(12);
+  text-transform: uppercase;
+
+  &__item{
+    margin-right: fun-rem(5);
+    display: flex;
+    align-items: center;
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+  }
+
+  &__icon{
+    flex: none;
+    margin-right: fun-rem(3);
+    width: 22px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_2{
+
+    .b-control-info-1__item{
+      margin-right: fun-rem(30);
+
+      &:last-child{
+        margin-right: 0;
+      }
+
+      &:first-child{
+        margin-right: auto;
+      }
+    }
+
+  }
+
+  @media (max-width: 1349.98px){
+    @include font-size(10);
+
+    &__icon{
+      width: 15px;
+      height: 14px;
+    }
+  }
+
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-control-info-2{
+  display: flex;
+  flex-direction: column;
+  font-family: $var-font-2;
+  @include font-size(10);
+  text-transform: uppercase;
+
+  &__item{
+    //margin-bottom: fun-rem(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:last-child{
+      //margin-bottom: fun-rem(1);
+    }
+
+  }
+
+  &__icon{
+    flex: none;
+    margin-right: fun-rem(3);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+
+// b-control-apps
+//=============================================
+.b-control-apps{
+  display: flex;
+  flex-wrap: wrap;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__link{
+    display: block;
+    font-weight: 400;
+    color: #fff;
+    @include font-size(18);
+    font-family: $var-font-2;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    @include hover-focus{
+      opacity: .9;
+    }
+
+    //&:last-child{
+    //  margin-right: 0;
+    //}
+
+    & + a{
+      margin-left: fun-rem(80);
+    }
+
+  }
+
+}

@@ -1,0 +1,92 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// breadcrumb & pagination
+////////////////////////////////////////////////
+
+// b-breadcrumb
+//=============================================
+.b-breadcrumb{
+  margin-bottom: fun-rem(40);
+  font-family: $var-font-2;
+  text-transform: uppercase;
+
+  a{
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+    @include transition();
+  }
+
+  .breadcrumb-item{
+
+    a{
+      color: $var-color-4;
+
+      @include hover-focus{
+        color: $var-color-1;
+      }
+
+    }
+
+  }
+
+  //&__{}
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  @media (max-width: 991.98px){
+    margin-bottom: fun-rem(20);
+    @include font-size(10);
+
+    .breadcrumb-item{
+      @include font-size(10);
+    }
+  }
+
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+}
+
+
+// b-pagination
+//=============================================
+.b-pagination{
+  margin-bottom: fun-rem(30);
+
+  .pagination{
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .page-link{
+    margin: 0;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $var-font-2;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: fun-rem(3);
+
+    @include hover-focus{
+      box-shadow: none;
+    }
+
+  }
+
+  //&__{}
+
+}
+
+
+.b-pagination-box-1{
+  padding: fun-rem(30) 0 0;
+}

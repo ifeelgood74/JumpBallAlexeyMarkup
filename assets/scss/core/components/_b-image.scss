@@ -1,0 +1,51 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// img
+////////////////////////////////////////////////
+
+.b-img{
+  @include mix-img-responsive();
+}
+
+.b-img-height{
+  @include mix-img-responsive-height();
+}
+
+.b-img-cover{
+  @include mix-img-responsive-fit();
+}
+
+.b-img-contain{
+  @include mix-img-responsive-fit(inline-block, contain);
+}
+
+.b-img-in{
+  @include mix-img-in();
+}
+
+
+.b-overlay-img{
+  @include mix-overlay-img;
+}
+
+.b-img-double{
+  @extend %extend-img-double;
+}
+
+
+// layout
+//=============================================
+//.b-img-article{}
+
+.b-img-caption{
+  padding: fun-rem(10);
+  font-family: $var-font-2;
+  font-size: fun-rem(12);
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}

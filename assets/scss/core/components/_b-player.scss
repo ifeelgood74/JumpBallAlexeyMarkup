@@ -1,0 +1,3925 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// b-player
+////////////////////////////////////////////////
+
+// components
+//=============================================
+.b-player-card-1{
+  display: flex;
+  max-width: 424px;
+  border: 1px solid $var-color-1-l;
+  border-radius: 3px;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &:hover{
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.24);
+  }
+
+  &.active{
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.24);
+
+    .b-player-card-1__divider{
+      background-color: $var-color-3;
+    }
+
+  }
+
+  &__img{
+    flex: none;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    width: 180px;
+    height: 250px;
+    border-radius: 3px;
+    overflow: hidden;
+
+    @include hover-focus{
+      //border: 1px solid $var-color-1;
+      opacity: .9;
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(5) fun-rem(8);
+    flex: auto;
+    border-left: 1px solid $var-color-1-l;
+  }
+
+  &__title{
+    margin-bottom: fun-rem(5);
+    display: flex;
+    justify-content: space-between;
+    font-family: $var-font-3;
+    @include font-size(20);
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  &__title-link{
+    flex: auto;
+    display: block;
+    color: $var-color-0;
+    font-weight: 300;
+
+    @include hover-focus{
+      color: $var-color-1;
+    }
+
+  }
+
+  &__title-num{
+    flex: none;
+    margin-left: fun-rem(2);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $var-font-2;
+    @include font-size(34);
+    color: $var-color-3;
+    font-weight: 700;
+    border: 1px solid $var-color-5;
+    border-radius: 3px;
+    line-height: 1;
+  }
+
+  &__divider{
+    margin-bottom: fun-rem(5);
+    background-color: $var-color-1-l;
+    display: block;
+    margin-right: auto;
+    width: 60px;
+    height: 4px;
+    border-radius: 3px;
+  }
+
+  &__info{
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    @include font-size(12);
+    font-family: $var-font-2;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.333;
+
+    span{
+      color: $var-color-1-l;
+    }
+
+  }
+
+  &__main{
+    padding: fun-rem(8) 0 fun-rem(13);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__logo{
+    padding: 5px;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 1349.98px){
+    max-width: 100%;
+  }
+
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+
+ @media (max-width: 575.98px){
+   flex-direction: column;
+
+   &__main{
+     padding: fun-rem(0) 0 fun-rem(0);
+   }
+
+   &__logo{
+     width: 40px;
+     height: 40px;
+   }
+
+   &__content{
+     border-left: none;
+   }
+
+   &__img-link{
+     width: 100px;
+     height: 150px;
+   }
+ }
+
+}
+
+.b-player-card-2{
+  position: relative;
+  display: block;
+  width: 310px;
+  min-height: 595px;
+  border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+  overflow: hidden;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 380px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(10) fun-rem(10) fun-rem(5);
+  }
+
+  &__divider{
+    margin-bottom: fun-rem(5);
+  }
+
+  &__info{
+    padding-left: 0;
+    margin-bottom: fun-rem(10);
+    list-style: none;
+    @include font-size(14);
+    font-family: $var-font-2;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.333;
+
+    span{
+      @include font-size(14);
+      font-weight: 400;
+      color: $var-color-1-l;
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(6) fun-rem(18);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(51, 51, 51, 0.5);
+    backdrop-filter: blur(4px);
+  }
+
+  &__caption-title{
+    flex: auto;
+    padding-right: fun-rem(5);
+    font-family: $var-font-3;
+    @include font-size(18);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1.3;
+
+    @include hover-focus{
+      color: $var-color-1;
+    }
+
+  }
+
+  &__caption-img{
+    background-color: #fff;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  @media (max-width: 575.98px){
+    margin-bottom: fun-rem(10);
+    width: 300px;
+  }
+
+}
+
+.b-player-card-3{
+  position: relative;
+  display: flex;
+  max-width: 312.5px;
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  overflow: hidden;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    flex: none;
+    overflow: hidden;
+    border-right: 1px solid $var-color-5;
+    width: 80px;
+    height: 110px;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin-right: -1px;
+    height: 100%;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__content{
+    flex: auto;
+    padding: fun-rem(5) fun-rem(5) 0 fun-rem(4);
+  }
+
+  &__title{
+    margin-bottom: fun-rem(1);
+    @include font-size(14);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  &__title-link{
+    display: block;
+    color: $var-color-0;
+
+    @include hover-focus{
+      color: $var-color-1;
+    }
+
+  }
+
+  &__divider{
+    margin-bottom: fun-rem(2.5);
+    background: $var-color-1-l;
+    width: 80px;
+    height: 3px;
+    border-radius: 5px;
+  }
+
+  &__main{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo{
+    flex: none;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__info{
+    flex: auto;
+
+  }
+
+  &__score{
+    margin-bottom: fun-rem(3);
+    display: flex;
+    align-items: center;
+  }
+
+  &__score-1{
+    margin-right: fun-rem(5);
+    @include font-size(36);
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  &__score-2{
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__score-3{
+
+    @include font-size(12);
+  }
+
+  &__score-4{
+    @include font-size(8);
+    color: $var-color-1-l;
+  }
+
+  &__team{
+    font-family: $var-font-2;
+    @include font-size(10);
+    color: $var-color-1-l;
+    text-transform: uppercase;
+
+    >span{
+      display: inline-block;
+      padding-top: fun-rem(2);
+      border-top: 1px solid $var-color-1-l;
+    }
+
+  }
+
+}
+
+.b-player-card-4{
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 420px;
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  overflow: hidden;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__col-1{
+    display: flex;
+  }
+
+  &__img{
+    flex: none;
+    overflow: hidden;
+    border-right: 1px solid $var-color-5;
+    width: 80px;
+    height: 110px;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin-right: -1px;
+    height: 100%;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(5) fun-rem(4);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__title{
+    margin-bottom: fun-rem(4);
+    @include font-size(14);
+  }
+
+  &__title-link{
+    display: block;
+    color: $var-color-0;
+
+    @include hover-focus{
+      color: $var-color-1;
+    }
+
+  }
+
+  &__divider{
+    margin-bottom: fun-rem(5);
+    background: $var-color-1-l;
+    width: 80px;
+    height: 3px;
+    border-radius: 5px;
+  }
+
+  &__role{
+    margin-bottom: fun-rem(2);
+    @include font-size(10);
+    color: $var-color-1-l;
+  }
+
+  &__desc{
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    @include font-size(10);
+    font-family: $var-font-2;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &__col-2{
+    padding: fun-rem(1) fun-rem(5);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__top{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__time{
+    text-align: center;
+  }
+
+  &__time-1{
+    @include font-size(26);
+    font-weight: 700;
+    color: $var-color-1;
+    line-height: 1.34;
+  }
+
+  &__time-2{
+    @include font-size(10);
+  }
+
+  &__logo{
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__stats{
+    display: flex;
+
+  }
+
+  &__stat{
+    text-align: center;
+    min-width: 55px;
+    margin-right: 5px;
+
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+
+  &__stat-1{
+    @include font-size(26);
+    font-weight: 700;
+    line-height: 1.34;
+  }
+
+  &__stat-2{
+    @include font-size(10);
+  }
+
+  &_right{
+
+    .b-player-card-4__top{
+      justify-content: flex-start;
+    }
+
+    .b-player-card-4__content{
+      text-align: right;
+    }
+
+    .b-player-card-4__img{
+      border-right: none;
+      border-left: 1px solid $var-color-5;
+    }
+
+    .b-player-card-4__img-link{
+      margin-right: 0;
+      margin-left: -1px;
+    }
+
+  }
+
+}
+
+.b-player-card-5{
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 420px;
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  overflow: hidden;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__col-1{
+    display: flex;
+  }
+
+  &__img{
+    flex: none;
+    overflow: hidden;
+    border-right: 1px solid $var-color-5;
+    width: 80px;
+    height: 110px;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin-right: -1px;
+    height: 100%;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(5) fun-rem(4);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__title{
+    margin-bottom: fun-rem(4);
+    @include font-size(18);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  &__title-link{
+    display: block;
+    color: $var-color-0;
+
+    @include hover-focus{
+      color: $var-color-1;
+    }
+
+  }
+
+  &__divider{
+    margin-bottom: fun-rem(4);
+    background: $var-color-1-l;
+    width: 80px;
+    height: 3px;
+    border-radius: 5px;
+  }
+
+  &__role{
+    margin-bottom: 0;
+    @include font-size(12);
+    color: $var-color-1-l;
+  }
+
+  &__desc{
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    @include font-size(12);
+    font-family: $var-font-2;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &__col-2{
+    padding: fun-rem(4) fun-rem(14) fun-rem(9);
+    display: flex;
+    align-items: flex-end;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__logo{
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__score{
+    text-align: center;
+    min-width: 80px;
+  }
+
+  &__score-1{
+    @include font-size(52);
+    font-weight: 700;
+    line-height: 1.34;
+  }
+
+  &__score-2{
+    @include font-size(14);
+  }
+
+  &_right{
+
+    .b-player-card-5__divider{
+      margin-left: auto;
+    }
+
+    .b-player-card-5__desc{
+      justify-content: flex-end;
+    }
+
+    .b-player-card-5__content{
+      text-align: right;
+    }
+
+    .b-player-card-5__img{
+      border-right: none;
+      border-left: 1px solid $var-color-5;
+    }
+
+    .b-player-card-5__img-link{
+      margin-right: 0;
+      margin-left: -1px;
+    }
+
+  }
+
+}
+
+.b-player-card-6{
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  max-width: 398px;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    margin-right: -1px;
+    flex: none;
+    overflow: hidden;
+    border: 1px solid $var-color-5;
+    border-radius: 3px 0 0 3px;
+    width: 80px;
+    height: 110px;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    height: 100%;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__content{
+    flex: auto;
+    padding: fun-rem(1) fun-rem(10) 0;
+    font-family: $var-font-2;
+    @include font-size(14);
+    text-transform: uppercase;
+    border: 1px solid $var-color-5;
+    border-radius: 0 3px 3px 0;
+    text-align: right;
+  }
+
+  &__info{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    line-height: 1.2;
+
+    >li{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      &:nth-child(odd){
+        color: $var-color-1;
+      }
+
+      strong{
+        margin-left: fun-rem(9);
+        @include font-size(18);
+        font-weight: 700;
+
+        &.active{
+          color: $var-color-3-l;
+        }
+
+      }
+
+      span{
+        display: inline-block;
+        margin-left: fun-rem(10);
+      }
+
+    }
+
+  }
+
+  &_right{
+
+    .b-player-card-6__img{
+      margin-left: -1px;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .b-player-card-6__content{
+      border-radius: 3px 0 0 3px;
+      text-align: left;
+    }
+
+    .b-player-card-6__info{
+
+      >li{
+        justify-content: flex-start;
+
+        strong{
+          margin-left: 0;
+          margin-right: fun-rem(9);
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+.b-player-card-7{
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  width: 200px;
+  min-height: 370px; //380
+  overflow: hidden;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 250px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+    text-align: center;
+  }
+
+  &__caption-img{
+    margin: 0 auto;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__caption-info{
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__caption-info-1{
+    @include font-size(36);
+    font-weight: 500;
+  }
+
+  &__caption-info-2{
+    padding-top: fun-rem(1);
+    border-top: 1px solid #fff;
+    font-family: $var-font-2;
+    @include font-size(12);
+    font-weight: 700;
+  }
+
+  &__content{
+    padding: fun-rem(3) fun-rem(5) fun-rem(5);
+  }
+
+  &__title{
+    margin-bottom: fun-rem(10);
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+    text-align: center;
+
+    >a{
+      display: block;
+
+      //@include hover-focus{
+      //  color: $var-color-1;
+      //}
+
+    }
+
+  }
+
+  &__rang{
+    margin-bottom: fun-rem(5);
+    @include font-size(10);
+  }
+
+  &__divider{
+    margin-bottom: fun-rem(7);
+    background-color: $var-color-1-l;
+    display: block;
+    margin-right: auto;
+    width: 80px;
+    height: 3px;
+    border-radius: 3px;
+  }
+
+  &__team{
+    padding-right: fun-rem(35);
+    @include font-size(10);
+  }
+
+  &__city{
+    padding-right: fun-rem(35);
+    @include font-size(10);
+    color: $var-color-1-l;
+  }
+
+  &__logo{
+    position: absolute;
+    bottom: 9px;
+    right: 5px;
+    flex: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+.b-player-card-8{
+  position: relative;
+  display: block;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  max-width: 200px;
+  min-height: 310px;
+  overflow: hidden;
+  text-align: center;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 250px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    min-height: 60px;
+  }
+
+  &__caption-title{
+    margin-bottom: 0;
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+
+    >a{
+      display: block;
+      color: #fff;
+
+      @include hover-focus{
+        color: $var-color-1;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(8) fun-rem(10) fun-rem(3);
+  }
+
+  &__divider{
+    margin: 0 auto fun-rem(4);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+  }
+
+  &__rang{
+    @include font-size(14);
+  }
+
+  &__desc{
+    @include font-size(12);
+  }
+
+  &__num{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    @include font-size(34);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+}
+
+.b-player-card-9{
+  position: relative;
+  display: block;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  max-width: 200px;
+  min-height: 350px;
+  overflow: hidden;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 250px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+    text-align: center;
+  }
+
+  &__caption-info{
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__caption-info-1{
+    @include font-size(36);
+    font-weight: 500;
+  }
+
+  &__caption-info-2{
+    padding-top: fun-rem(1);
+    border-top: 1px solid #fff;
+    font-family: $var-font-2;
+    @include font-size(12);
+    font-weight: 700;
+  }
+
+  &__content{
+    padding: fun-rem(3) fun-rem(5) fun-rem(10);
+    text-align: center;
+  }
+
+  &__title{
+    margin-bottom: fun-rem(7);
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+
+    >a{
+      display: block;
+
+      //@include hover-focus{
+      //  color: $var-color-1;
+      //}
+
+    }
+
+  }
+
+  &__divider{
+    margin: 0 auto fun-rem(7);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 90px;
+    height: 3px;
+    border-radius: 3px;
+  }
+
+  &__rang{
+    margin: 0 auto fun-rem(3);
+    @include font-size(10);
+  }
+
+  &__desc{
+    @include font-size(10);
+  }
+
+}
+
+.b-player-card-10{
+  position: relative;
+  display: block;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  width: 200px;
+  min-height: 330px;
+  overflow: hidden;
+  text-align: center;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 250px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    min-height: 60px;
+  }
+
+  &__caption-title{
+    margin-bottom: 0;
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+
+    >a{
+      display: block;
+      color: #fff;
+
+      @include hover-focus{
+        color: $var-color-1;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(8) fun-rem(10) fun-rem(3);
+  }
+
+  &__divider{
+    margin: 0 auto fun-rem(4);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+  }
+
+  &__rang{
+    @include font-size(14);
+  }
+
+  &__desc{
+    @include font-size(12);
+    color: $var-color-1-l;
+  }
+
+}
+
+.b-player-card-11{
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+  width: 200px;
+  min-height: 370px;
+  overflow: hidden;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 250px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  &__caption-img{
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__caption-info{
+    padding-right: fun-rem(4);
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: #fff;
+    @include font-size(16);
+    font-weight: 700;
+  }
+
+  //&__caption-info-1{}
+
+  //&__caption-info-2{}
+
+  &__who{
+    position: absolute;
+    top: 16px;
+    left: 10px;
+    flex: none;
+    @include font-size(14);
+    font-weight: 400;
+    color: #fff;
+  }
+
+  &__logo{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+  }
+
+  &__logo-2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__share{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    flex: none;
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(5) fun-rem(5) fun-rem(5);
+    text-align: center;
+  }
+
+  &__title{
+    margin-bottom: fun-rem(10);
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+    text-align: center;
+
+    >a{
+      display: block;
+
+      //@include hover-focus{
+      //  color: $var-color-1;
+      //}
+
+    }
+
+  }
+
+  &__rang{
+    margin-bottom: fun-rem(2);
+    @include font-size(10);
+  }
+
+  &__desc{
+    margin-bottom: fun-rem(5);
+    @include font-size(10);
+    color: $var-color-1-l;
+  }
+
+  &__divider{
+    margin: 0 auto fun-rem(5);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 60px;
+    height: 5px;
+    border-radius: 3px;
+  }
+
+  &__team{
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include font-size(10);
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+}
+
+.b-player-card-12{
+  position: relative;
+  display: block;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  //border: 1px solid $var-color-5;
+  border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+  max-width: 200px;
+  min-height: 330px;
+  overflow: hidden;
+  text-align: center;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 250px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    min-height: 60px;
+  }
+
+  &__caption-title{
+    margin-bottom: 0;
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+
+    >a{
+      display: block;
+      color: #fff;
+
+      @include hover-focus{
+        color: $var-color-1;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(5) fun-rem(5) fun-rem(5);
+  }
+
+  &__divider{
+    margin: 0 auto fun-rem(3);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 60px;
+    height: 5px;
+    border-radius: 3px;
+  }
+
+  &__divider-2{
+    margin: fun-rem(2) auto fun-rem(3);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 80px;
+    height: 1px;
+  }
+
+  &__rang{
+    @include font-size(10);
+  }
+
+  &__desc{
+    @include font-size(10);
+    color: $var-color-1-l;
+  }
+
+
+  &__num{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    @include font-size(34);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__logo{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+  }
+
+  &__share{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    flex: none;
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+
+    }
+
+  }
+
+}
+
+.b-player-card-12-2{
+  position: relative;
+  display: block;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  //border: 1px solid $var-color-5;
+  border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+  max-width: 200px;
+  min-height: 330px;
+  overflow: hidden;
+  text-align: center;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 250px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    min-height: 60px;
+  }
+
+  &__caption-title{
+    margin-bottom: 0;
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+
+    >a{
+      display: block;
+      color: #fff;
+
+      @include hover-focus{
+        color: $var-color-1;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(5) fun-rem(5) fun-rem(5);
+  }
+
+  &__divider{
+    margin: 0 auto fun-rem(3);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 60px;
+    height: 5px;
+    border-radius: 3px;
+  }
+
+  &__divider-2{
+    margin: fun-rem(2) auto fun-rem(3);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 80px;
+    height: 1px;
+  }
+
+  &__rang{
+    @include font-size(10);
+  }
+
+  &__desc{
+    margin-bottom: fun-rem(5);
+    @include font-size(10);
+    color: $var-color-1-l;
+  }
+
+  &__team{
+    padding-top: fun-rem(2);
+    border-top: 1px solid $var-color-5;
+    @include font-size(10);
+  }
+
+  &__num{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    @include font-size(34);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__logo{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+  }
+
+  &__share{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    flex: none;
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+
+    }
+
+  }
+
+}
+
+.b-player-card-13{
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  border: 1px solid $var-color-1-l;
+  //border: 1px solid $var-color-5;
+  //border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+  width: 200px;
+  min-height: 370px;
+  overflow: hidden;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 250px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  &__caption-info{
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__caption-info-1{
+    @include font-size(36);
+    font-weight: 500;
+  }
+
+  &__caption-info-2{
+    padding-top: fun-rem(4);
+    border-top: 1px solid #fff;
+    font-family: $var-font-2;
+    @include font-size(10);
+    font-weight: 400;
+  }
+
+  &__who{
+    position: absolute;
+    top: 16px;
+    left: 10px;
+    flex: none;
+    @include font-size(14);
+    font-weight: 400;
+    color: #fff;
+  }
+
+  &__num{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    @include font-size(34);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__logo-2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__share{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    flex: none;
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(5) fun-rem(5) fun-rem(5);
+    text-align: center;
+  }
+
+  &__title{
+    margin-bottom: fun-rem(10);
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+    text-align: center;
+
+    >a{
+      display: block;
+
+      //@include hover-focus{
+      //  color: $var-color-1;
+      //}
+
+    }
+
+  }
+
+  &__rang{
+    margin-bottom: fun-rem(2);
+    @include font-size(10);
+  }
+
+  &__desc{
+    margin-bottom: fun-rem(5);
+    @include font-size(10);
+    color: $var-color-1-l;
+  }
+
+  &__divider{
+    margin: 0 auto fun-rem(5);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 60px;
+    height: 4px;
+    border-radius: 3px;
+  }
+
+  &__team-2{
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include font-size(10);
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &__team{
+    @include font-size(10);
+  }
+
+}
+
+.b-player-card-13-2{
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  //border: 1px solid $var-color-5;
+  border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+  max-width: 200px;
+  min-height: 330px;
+  overflow: hidden;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 250px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    min-height: 60px;
+  }
+
+  &__caption-title{
+    margin-bottom: 0;
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+
+    >a{
+      display: block;
+      color: #fff;
+
+      @include hover-focus{
+        color: $var-color-1;
+      }
+
+    }
+
+  }
+
+  &__who{
+    position: absolute;
+    top: 16px;
+    left: 10px;
+    flex: none;
+    @include font-size(14);
+    font-weight: 400;
+    color: #fff;
+  }
+
+  &__num{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    @include font-size(34);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__logo{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+  }
+
+  &__logo-2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__share{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    flex: none;
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(5) fun-rem(5) fun-rem(5);
+    text-align: center;
+  }
+
+  &__title{
+    margin-bottom: fun-rem(10);
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+    text-align: center;
+
+    >a{
+      display: block;
+
+      //@include hover-focus{
+      //  color: $var-color-1;
+      //}
+
+    }
+
+  }
+
+  &__rang{
+    margin-bottom: fun-rem(2);
+    @include font-size(10);
+  }
+
+  &__desc{
+    margin-bottom: fun-rem(5);
+    @include font-size(10);
+    color: $var-color-1-l;
+  }
+
+  &__divider{
+    margin: 0 auto fun-rem(5);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 60px;
+    height: 4px;
+    border-radius: 3px;
+  }
+
+  &__team-2{
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include font-size(10);
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &__team{
+    @include font-size(10);
+  }
+
+}
+
+.b-player-card-14{
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  max-width: 420px;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    flex: none;
+    position: relative;
+    margin-right: -1px;
+    overflow: hidden;
+    border: 1px solid $var-color-5;
+    border-radius: 3px 0 0 3px;
+    width: 160px;
+    height: 200px;
+  }
+
+  &__head{
+    flex: auto;
+  }
+
+  &__main{
+    flex: auto;
+    padding: fun-rem(10) fun-rem(5) fun-rem(1);
+    border: 1px solid $var-color-5;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__top{
+    margin-bottom: fun-rem(5);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    height: 100%;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__title{
+    margin-bottom: fun-rem(4);
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  &__title-link{
+    display: block;
+    color: $var-color-0;
+
+    @include hover-focus{
+      color: $var-color-1;
+    }
+
+  }
+
+  &__divider{
+    margin-bottom: fun-rem(4);
+    background: $var-color-2;
+    width: 87px;
+    height: 4px;
+    border-radius: 3px;
+  }
+
+  &__desc{
+    padding-left: 0;
+    margin-bottom: fun-rem(0);
+    list-style: none;
+    @include font-size(10);
+    font-weight: 400;
+    color: $var-color-1;
+    line-height: 1.8;
+  }
+
+  &__info{
+    padding: fun-rem(10) 0;
+    margin-bottom: fun-rem(3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $var-color-5;
+  }
+
+  &__info-item{
+    padding: fun-rem(1) fun-rem(3) fun-rem(1);
+    flex: none;
+    border: 1px solid $var-color-5;
+    border-radius: 3px;
+    text-align: center;
+    min-width: 50px;
+  }
+
+  &__info-1{
+    margin-bottom: fun-rem(1);
+    padding-bottom: fun-rem(1);
+    @include font-size(20);
+    font-weight: 700;
+    border-bottom: 1px solid $var-color-5;
+  }
+
+  &__info-2{
+    @include font-size(10);
+    font-weight: 700;
+    color: $var-color-1;
+  }
+
+  &__team{
+    margin-bottom: fun-rem(0);
+    @include font-size(10);
+    font-weight: 400;
+  }
+
+  &__logo{
+    flex: none;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: 3px;
+  }
+
+  &__share{
+    flex: none;
+    margin: 0 fun-rem(10);
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+    }
+  }
+
+  @include hover{
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.24);
+    .b-player-card-14__main, .b-player-card-14__img{
+      border-color: $var-color-1;
+    }
+  }
+
+  &_right{
+    margin-left: auto;
+
+    .b-player-card-14__img{
+      margin-right: 0;
+      margin-left: -1px;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .b-player-card-14__main{
+      border-radius: 3px 0 0 3px;
+      text-align: right;
+      border: 1px solid $var-color-5;
+      border-right: none
+    }
+
+    .b-player-card-14__divider{
+      margin-left: auto;
+    }
+
+    .b-player-card-14__top{
+      flex-direction: row-reverse;
+    }
+
+    .b-player-card-14__info{
+      flex-direction: row-reverse;
+    }
+
+  }
+
+}
+
+.b-player-card-15{
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  max-width: 400px;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    margin-right: -1px;
+    flex: none;
+    overflow: hidden;
+    border: 1px solid $var-color-5;
+    border-radius: 3px 0 0 3px;
+    width: 144px;
+    height: 180px;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    height: 100%;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__content{
+    flex: auto;
+    padding: fun-rem(8) fun-rem(8) 0;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    border: 1px solid $var-color-5;
+    border-radius: 0 3px 3px 0;
+    text-align: right;
+  }
+
+  &__title{
+    margin-bottom: fun-rem(2);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    strong{
+      //margin-left: fun-rem(3);
+      @include font-size(18);
+      font-weight: 700;
+      color: $var-color-1;
+
+      &.active{
+        color: $var-color-3 !important;
+      }
+
+    }
+
+    span{
+      //margin-right: fun-rem(3);
+      @include font-size(14);
+      font-weight: 700;
+      color: $var-color-1;
+    }
+
+  }
+
+  &__info{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include font-size(12);
+    line-height: 1.8;
+
+    >li{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      &:nth-child(even){
+        color: $var-color-1;
+      }
+
+      span{
+        color: $var-color-1;
+      }
+
+    }
+
+  }
+
+  &_right{
+    text-align: left;
+
+    .b-player-card-15__img{
+      margin-right: 0;
+      margin-left: -1px;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .b-player-card-15__content{
+      border-radius: 3px 0 0 3px;
+      text-align: left;
+    }
+
+    .b-player-card-15__title{
+      justify-content: flex-start;
+    }
+
+    .b-player-card-15__info{
+
+      >li{
+        justify-content: flex-start;
+      }
+
+    }
+
+  }
+
+}
+
+.b-player-card-16{
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  max-width: 426.6px;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    flex: none;
+    position: relative;
+    margin-right: -1px;
+    overflow: hidden;
+    border: 1px solid $var-color-5;
+    border-radius: 3px 0 0 3px;
+    width: 160px;
+    height: 200px;
+  }
+
+  &__main{
+    flex: auto;
+    padding: fun-rem(8) fun-rem(10) fun-rem(1);
+    border: 1px solid $var-color-5;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__head{
+    margin-bottom: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo{
+    flex: none;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: 3px;
+  }
+
+  &__share{
+    flex: none;
+
+    >a{
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+    }
+  }
+
+
+  &__img-link{
+    position: relative;
+    display: block;
+    height: 100%;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__title{
+    margin-bottom: fun-rem(5);
+    line-height: 1.1;
+  }
+
+  &__title-link{
+    display: block;
+    @include font-size(20);
+    font-weight: 700;
+    color: $var-color-1;
+
+    @include hover-focus{
+      color: $var-color-1-d;
+    }
+
+  }
+
+  &__info{
+    margin-bottom: fun-rem(3);
+    padding-bottom: fun-rem(3);
+    border-bottom: 1px solid $var-color-5;
+    display: flex;
+    justify-content: space-between;
+    //border-bottom: 1px solid $var-color-5;
+  }
+
+  &__info-score{
+    flex: none;
+    text-align: center;
+    min-width: 69px;
+    @include font-size(34);
+    font-weight: 700;
+  }
+
+  &__info-main{
+    flex: auto;
+    min-width: 69px;
+    padding-left: fun-rem(8);
+    text-align: left;
+  }
+
+  &__info-1{
+    margin-bottom: fun-rem(1);
+    @include font-size(14);
+    font-weight: 700;
+  }
+
+  &__info-2{
+    @include font-size(10);
+    font-weight: 400;
+    color: $var-color-1;
+  }
+
+  &__info-2{
+    @include font-size(10);
+    font-weight: 700;
+    color: $var-color-1-l;
+  }
+
+
+  &__divider{
+    margin-bottom: fun-rem(5);
+    background: $var-color-2;
+    height: 4px;
+    border-radius: 3px;
+  }
+
+  &__team{
+    margin-bottom: fun-rem(0);
+    @include font-size(10);
+    font-weight: 400;
+  }
+
+  @media (max-width: 1349.98px){
+
+    &__title-link{
+      @include font-size(16);
+    }
+
+    &__info-score{
+      min-width: 39px;
+      @include font-size(24);
+    }
+
+    &__info-1{
+      @include font-size(10);
+    }
+  }
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-player-card-17{
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+  width: 200px;
+  min-height: 370px;
+  overflow: hidden;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 250px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+
+    &_center{
+      justify-content: center;
+    }
+  }
+
+  &__caption-img{
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__caption-info{
+    padding-right: fun-rem(4);
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: #fff;
+    @include font-size(16);
+    font-weight: 700;
+  }
+
+  //&__caption-info-1{}
+
+  //&__caption-info-2{}
+
+  &__who{
+    position: absolute;
+    top: 16px;
+    left: 10px;
+    flex: none;
+    @include font-size(14);
+    font-weight: 400;
+    color: #fff;
+  }
+
+  &__logo{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+  }
+
+  &__logo-2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__share{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    flex: none;
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(5) fun-rem(5) fun-rem(5);
+    text-align: center;
+  }
+
+  &__title{
+    margin-bottom: fun-rem(6);
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+    text-align: center;
+
+    >a{
+      display: block;
+
+      //@include hover-focus{
+      //  color: $var-color-1;
+      //}
+
+    }
+
+  }
+
+  &__rang{
+    margin-bottom: fun-rem(2);
+    @include font-size(12);
+    font-weight: 700;
+  }
+
+  &__desc{
+    margin-bottom: fun-rem(3);
+    @include font-size(10);
+    color: $var-color-1-l;
+  }
+
+  &__divider-1{
+    margin: 0 auto fun-rem(5);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 120px;
+    height: 1px;
+  }
+
+  &__divider-2{
+    margin: 0 auto fun-rem(3);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 60px;
+    height: 3px;
+    border-radius: 3px;
+  }
+
+  &__team{
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include font-size(10);
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+}
+
+.b-player-card-18{
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  max-width: 426.6px;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    flex: none;
+    position: relative;
+    margin-right: -1px;
+    overflow: hidden;
+    border: 1px solid $var-color-5;
+    border-radius: 3px 0 0 3px;
+    width: 160px;
+    height: 200px;
+  }
+
+  &__main{
+    flex: auto;
+    padding: fun-rem(8) fun-rem(10) fun-rem(1);
+    border: 1px solid $var-color-5;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__head{
+    margin-bottom: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo{
+    flex: none;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: 3px;
+  }
+
+  &__share{
+    flex: none;
+
+    >a{
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+    }
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    height: 100%;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__title{
+    margin-bottom: fun-rem(5);
+    line-height: 1.1;
+  }
+
+  &__title-link{
+    display: block;
+    @include font-size(20);
+    font-weight: 700;
+    color: $var-color-0-0;
+
+    @include hover-focus{
+      color: $var-color-1;
+    }
+
+  }
+
+  &__info{
+    margin-bottom: fun-rem(5);
+    //padding-bottom: fun-rem(3);
+    //border-bottom: 1px solid $var-color-5;
+    color: $var-color-1-l;
+    @include font-size(10);
+    font-weight: 400;
+  }
+
+  &__divider{
+    margin-bottom: fun-rem(5);
+    background: $var-color-2;
+    height: 4px;
+    border-radius: 3px;
+    max-width: 60px;
+  }
+
+  &__team{
+    padding-top: fun-rem(3);
+    border-top: 1px solid $var-color-1-l;
+    margin-bottom: fun-rem(0);
+    @include font-size(10);
+    font-weight: 400;
+  }
+
+  &_right{
+    margin-left: auto;
+
+    .b-player-card-18__img{
+      margin-right: 0;
+      margin-left: -1px;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .b-player-card-18__main{
+      border-radius: 3px 0 0 3px;
+      text-align: right;
+      border: 1px solid $var-color-5;
+      border-right: none
+    }
+
+    .b-player-card-18__divider{
+      margin-left: auto;
+    }
+
+    .b-player-card-14__top{
+      flex-direction: row-reverse;
+    }
+
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  @media (max-width: 991.98px){
+    &__title-link{
+      @include font-size(14);
+    }
+  }
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-player-card-19{
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+  width: 200px;
+  min-height: 370px;
+  overflow: hidden;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 250px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+
+    &_center{
+      justify-content: center;
+    }
+  }
+
+  &__caption-img{
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__caption-info{
+    padding-right: fun-rem(4);
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: #fff;
+    @include font-size(16);
+    font-weight: 700;
+  }
+
+  //&__caption-info-1{}
+
+  //&__caption-info-2{}
+
+  &__who{
+    position: absolute;
+    top: 16px;
+    left: 10px;
+    flex: none;
+    @include font-size(14);
+    font-weight: 400;
+    color: #fff;
+  }
+
+  &__logo{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+  }
+
+  &__logo-2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__share{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    flex: none;
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+
+    }
+
+  }
+
+  &__num{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    @include font-size(34);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__content{
+    padding: fun-rem(5) fun-rem(5) fun-rem(5);
+    text-align: center;
+  }
+
+  &__title{
+    margin-bottom: fun-rem(14);
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+    text-align: center;
+
+    >a{
+      display: block;
+
+      //@include hover-focus{
+      //  color: $var-color-1;
+      //}
+
+    }
+
+  }
+
+  &__rang{
+    margin-bottom: fun-rem(2);
+    @include font-size(10);
+    font-weight: 400;
+  }
+
+  &__desc{
+    margin-bottom: fun-rem(3);
+    @include font-size(10);
+    color: $var-color-1-l;
+  }
+
+  &__divider-1{
+    margin: 0 auto fun-rem(5);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 120px;
+    height: 1px;
+  }
+
+  &__divider-2{
+    margin: 0 auto fun-rem(3);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 60px;
+    height: 3px;
+    border-radius: 3px;
+  }
+
+  &__team{
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include font-size(10);
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+}
+
+.b-player-card-info{
+  padding: fun-rem(10) fun-rem(10);
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  max-width: 423.5px;
+  min-height: 105px;
+
+  .b-title-3{
+    margin-bottom: fun-rem(10);
+  }
+
+  &__row{
+    display: flex;
+  }
+
+  &__img{
+    flex: none;
+    position: relative;
+    margin-left: -10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__main{
+    padding-left: 5px;
+    flex: auto;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__name{
+    @include font-size(16);
+    font-weight: 700;
+    color: $var-color-1;
+  }
+
+  &__city{
+    @include font-size(12);
+    color: $var-color-1-l;
+  }
+
+  &__coach{
+    margin-bottom: fun-rem(2);
+    @include font-size(16);
+    font-weight: 700;
+    color: $var-color-1;
+    text-transform: uppercase;
+  }
+
+  &__info{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: $var-font-2;
+    @include font-size(16);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $var-color-1;
+    line-height: 1.385;
+
+    >li{
+      display: flex;
+
+      >span{
+        flex: none;
+        padding-right: fun-rem(5);
+        min-width: 150px;
+        color: $var-color-0;
+      }
+    }
+
+  }
+
+  &_1{
+    min-height: 230px !important;
+  }
+
+}
+
+.b-player-card-info-2{
+  padding: fun-rem(20) fun-rem(20);
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  flex: auto;
+
+  @media (max-width: 575.98px){
+    @include font-size(14);
+  }
+}
+
+.b-player-card-text{
+  padding: fun-rem(10) fun-rem(10);
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  height: 100%;
+
+  >.b-title-3{
+    margin-bottom: fun-rem(20);
+  }
+
+  >p{
+    margin-bottom: fun-rem(20);
+    letter-spacing: 0.44px;
+  }
+
+}
+
+.b-player-career-card{
+  padding: fun-rem(10) fun-rem(10);
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  max-width: 534.5px;
+  min-height: 110px;
+
+  .b-title-3{
+    margin-bottom: fun-rem(6.4);
+    color: $var-color-1;
+  }
+
+  &__row{
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__row + &__row{
+    margin-top: fun-rem(10);
+  }
+
+  &__img{
+    flex: none;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__main{
+    padding-left: fun-rem(10);
+    flex: auto;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__name{
+    @include font-size(26);
+    font-weight: 700;
+  }
+
+  &__city{
+    @include font-size(12);
+    color: $var-color-1-l;
+  }
+
+  &__coach{
+    margin-bottom: fun-rem(2);
+    @include font-size(16);
+    font-weight: 700;
+    color: $var-color-1;
+    text-transform: uppercase;
+  }
+
+}
+
+.b-player-career{
+
+  .row {
+    > .col,
+    > [class*="col-"] {
+      padding-bottom: 20px;
+    }
+  }
+
+  .b-statistics-card-2{
+    padding-bottom: fun-rem(10);
+
+    .b-title-3{
+      margin-bottom: fun-rem(6.4);
+      color: $var-color-1;
+    }
+
+  }
+
+}
+
+.b-player-attack-map{
+
+  &__img{
+    display: block;
+    margin: 0 auto;
+    max-width: 960px;
+    height: 860px;
+  }
+
+}
+
+
+// layout
+//=============================================
+.b-player-page{
+
+  //&__info{}
+  //&__stat{}
+  //&__game{}
+
+}
+
+.b-player-table-box{
+  margin-bottom: fun-rem(30);
+
+  .b-table-2{
+    margin-bottom: fun-rem(20);
+  }
+
+}
+
+.b-player-media-box{
+
+  .b-title-2{
+    margin-bottom: fun-rem(20);
+  }
+
+  .b-publications-grid{
+    margin-bottom: fun-rem(20);
+  }
+
+}
+
+.b-player-info{
+
+  .b-player-card-info{
+    margin-bottom: fun-rem(20);
+  }
+
+  .b-success-card-1{
+    margin-bottom: fun-rem(20);
+    padding-bottom: 0;
+    min-height: 105px;
+  }
+
+  &__row-2{
+    margin-right: -5px;
+    margin-left: -5px;
+    > .col,
+    > [class*="col-"] {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+  }
+
+  &__num{
+    padding: fun-rem(10) fun-rem(10);
+    border: 1px solid transparent;
+    border-radius: fun-rem(3);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-align: center;
+    min-height: 195px;
+  }
+
+  &__num-1{
+    @include font-size(18);
+    font-weight: 700;
+  }
+
+  &__num-2{
+    @include font-size(72);
+    color: $var-color-3;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__num-3{
+    background-color: $var-color-1-l;
+    display: block;
+    margin: 0 auto fun-rem(3);
+    max-width: 100px;
+    height: 5px;
+    border-radius: 3px;
+  }
+
+  &__num-4{
+    margin-bottom: fun-rem(5);
+    @include font-size(12);
+  }
+
+  &__num-5{
+    @include font-size(34);
+    color: $var-color-3;
+    font-weight: 700;
+  }
+
+  &_100{
+    height: 100%;
+  }
+
+}
+
+.b-player-info-box{
+  margin-bottom: fun-rem(30);
+}
+
+.b-player-qualities-box{
+  margin-bottom: fun-rem(30);
+
+  .row{
+    >.col-md-3 + .col-md-3{
+      border-left: 1px solid $var-color-5;
+    }
+  }
+
+}
+
+.b-player-text-box{
+  margin-bottom: fun-rem(30);
+}
+
+.b-player-video-box{
+  margin-bottom: fun-rem(30);
+
+  .b-video-player-thumb{
+    padding: fun-rem(20) 0;
+  }
+
+}
+
+.b-player-video-text-box{
+  margin-bottom: fun-rem(30);
+
+  .b-player-card-text{
+    margin-bottom: fun-rem(20);
+    height: auto;
+    min-height: 300px;
+  }
+
+}
+
+.b-player-slider-box{
+  margin-bottom: fun-rem(40);
+
+  //.b-title-box-2{
+  //  margin-bottom: fun-rem(20);
+  //}
+
+}
+
+.b-player-career-box{
+  margin-bottom: fun-rem(30);
+
+  &__item{
+    padding-top: fun-rem(20);
+    border-top: 1px solid $var-color-5;
+  }
+
+}
+
+.b-player-attack-box{
+  margin-bottom: fun-rem(40);
+}
+
+.b-player-attack-box-2{
+  position: relative;
+  z-index: 0;
+
+  &__label-box{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: auto;
+    display: flex;
+
+    &_1{
+      top: 7%;
+      padding: 0 20%;
+      justify-content: space-between;
+    }
+
+    &_2{
+      top: 10%;
+      padding: 0 .5%;
+      justify-content: space-between;
+    }
+
+    &_3{
+      top: 21%;
+      padding: 0 .5%;
+      justify-content: center;
+    }
+
+    &_4{
+      top: 32%;
+      padding: 0 20%;
+      justify-content: space-between;
+    }
+
+    &_5{
+      top: 41%;
+      padding: 0 5%;
+      justify-content: space-between;
+    }
+
+    &_6{
+      top: 45%;
+      padding: 0 5%;
+      justify-content: center;
+    }
+
+    &_7{
+      top: 68%;
+      padding: 0 5%;
+      justify-content: center;
+    }
+  }
+
+  &__label{
+    text-align: center;
+    font-family: $var-font-2;
+    font-size: fun-rem(20);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 1199.98px){
+    &__label{
+      font-size: fun-rem(16);
+    }
+  }
+
+  @media (max-width: 991.98px){
+    &__label{
+      font-size: fun-rem(14);
+    }
+  }
+
+
+}
+
+.b-player-card-box{
+
+  .b-player-card-1{
+    margin-bottom: fun-rem(20);
+  }
+
+}
+
+.b-player-box-1{
+  padding-bottom: fun-rem(20);
+
+  &_flex{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 340px;
+  }
+
+}

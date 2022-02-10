@@ -1,0 +1,41 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// To top style
+////////////////////////////////////////////////
+
+// go to top native jQuery
+//=============================================
+
+.b-totop {
+  position: fixed;
+  display: none;
+  background: $var-color-2;
+  color: #fff;
+  padding: 5px;
+  border-radius: 50% 0 0 50%;
+  box-shadow: none;
+  width: 70px;
+  height: 70px;
+  font-size: fun-rem(16);
+  right: 0;
+  bottom: 100px;
+  transition: none;
+  opacity: .95;
+  z-index: 9999;
+
+  @include hover{
+    background: $var-color-2;
+    opacity: 1;
+  }
+
+  @include hover-focus{
+    box-shadow: none;
+  }
+
+  @include media-breakpoint-down(md){
+    display: none !important;
+  }
+
+}

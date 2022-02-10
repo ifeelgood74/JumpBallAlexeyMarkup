@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+// CORE & FRAMEWORK
+//=============================================
+@import 'core/fonts';  // fonts
+@import 'core/config';  // variables, mixins, function
+@import 'core/framework-bootstrap-4'; // https://github.com/twbs/bootstrap  4.5.2  (+ jquery 3.5.1)
+
+// LIB (Plugins & Libraries styles)
+//=============================================
+@import 'core/libs'; // import plugin styles and overwriting
+
+// COMPONENTS (components styles)
+//=============================================
+@import 'core/components';
+
+// LAYOUT (All pages styles)
+//=============================================
+@import 'core/1-header-footer';
+@import 'core/2-home';
+@import 'core/3-pages';
+
+////////////////////////////////////////////////
+// TODO: Все комментарии в файле README.md
+////////////////////////////////////////////////

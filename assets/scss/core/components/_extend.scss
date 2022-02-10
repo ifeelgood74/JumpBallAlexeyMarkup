@@ -1,0 +1,213 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+///////////////////////////////////////////////
+// Extend
+///////////////////////////////////////////////
+
+// margin padding
+//=============================================
+%extend-padding{
+  padding: fun-rem(55) 0 fun-rem(55);
+}
+
+%extend-padding-dev{
+  padding: fun-rem(60) 0 fun-rem(60);
+}
+
+
+// background
+//=============================================
+%extend-bg-primary{
+  background-color: $var-color-1;
+}
+
+%extend-bg-light{
+  background-color: $var-color-3-l;
+}
+
+%extend-bg-dark{
+  background-color: $var-color-0;
+}
+
+
+// pseudo elements
+//=============================================
+
+%extend-before{
+  position: absolute;
+  content: '';
+}
+
+
+// ul li a
+//=============================================
+%extend-ul-li{
+  padding-left: 0;
+  list-style: none;
+
+  >li{
+    position: relative;
+    display: block;
+  }
+
+}
+
+%extend-ul-li-a{
+  padding-left: 0;
+  list-style: none;
+
+  >li{
+    position: relative;
+    display: block;
+
+    >a{
+      position: relative;
+      display: block;
+    }
+
+  }
+
+}
+
+%extend-ul-li-a-flex{
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+
+  >li{
+    position: relative;
+    display: flex;
+
+    >a{
+      position: relative;
+      display: flex;
+    }
+
+  }
+
+}
+
+
+// img
+//=============================================
+%extend-img{
+  @include mix-img-responsive();
+}
+
+%extend-img-height{
+  @include mix-img-responsive-height();
+}
+
+%extend-img-cover{
+  @include mix-img-responsive-fit();
+}
+
+%extend-img-in{
+  @include mix-img-in();
+}
+
+%extend-img-double{
+  position: relative;
+
+  .b-img{
+
+    //&:nth-child(1){
+    //visibility: visible;
+    //opacity: 1;
+    //z-index: 2;
+    //}
+
+    &:nth-child(2){
+      position: absolute;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 1;
+      @include transition(0.7s);
+    }
+
+  }
+
+  @include media-breakpoint-up(md){
+
+    &:hover{
+
+      .b-img{
+
+        //&:nth-child(1){
+        //visibility: hidden;
+        //opacity: 0;
+        //z-index: 1;
+        //}
+
+        &:nth-child(2){
+          visibility: visible;
+          opacity: 1;
+          //z-index: 2;
+        }
+
+      }
+
+    }
+
+  }
+
+  @include media-breakpoint-down(sm){
+
+    //.b-img{
+    //
+    //  &:nth-child(2){
+    //    display: none;
+    //  }
+    //
+    //}
+
+    .b-img-show{
+
+      &:nth-child(2){
+        visibility: visible !important;
+        opacity: 1 !important;
+        //z-index: 2;
+      }
+
+    }
+
+  }
+
+}
+
+
+// outline
+//=============================================
+%extend-outline{
+  user-select: none;
+
+  &:focus,
+  &.focus {
+    outline: 0;
+  }
+
+}
+
+
+// overlay
+//=============================================
+// overlay above
+%extend-overlay-img{
+  @include mix-overlay-img;
+}
+
+
+// gradient
+//=============================================
+//%extend-gradient-directional-1{
+//  background-color: #111111;
+//  @include mix-gradient-directional(#111111, #2f2f2f,69deg);
+//}
+
+//%extend-gradient-horizontal-1{
+//  background-color: #111111;
+//  @include mix-gradient-horizontal(#111111, #2f2f2f,0,100%);
+//}

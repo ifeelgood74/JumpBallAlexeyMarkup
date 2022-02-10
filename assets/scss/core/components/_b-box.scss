@@ -1,0 +1,53 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// b-box
+////////////////////////////////////////////////
+
+// b-box-1
+//=============================================
+.b-box{
+  background-color: #fff;
+  padding: fun-rem(10) fun-rem(10);
+  border: 1px solid $var-color-5; //rgba(20, 110, 180, 0.2);
+  border-radius: fun-rem(3);
+}
+
+
+// layout
+//=============================================
+.b-box-mb10{
+  margin-bottom: fun-rem(10);
+}
+
+.b-box-mb20{
+  margin-bottom: fun-rem(20);
+}
+
+.b-box-mb30{
+  margin-bottom: fun-rem(30);
+}
+.b-box-mb40{
+  margin-bottom: fun-rem(40);
+}
+
+.b-box-mb50{
+  margin-bottom: fun-rem(50);
+}
+
+.b-box-mb60{
+  margin-bottom: fun-rem(60);
+}
+
+.b-box-mb70{
+  margin-bottom: fun-rem(70);
+}
+
+.b-box-mb80{
+  margin-bottom: fun-rem(80);
+}
+
+.b-box-mb90{
+  margin-bottom: fun-rem(90);
+}

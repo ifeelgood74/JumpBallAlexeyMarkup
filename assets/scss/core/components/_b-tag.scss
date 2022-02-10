@@ -1,0 +1,183 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// tag
+////////////////////////////////////////////////
+
+// b-tag
+//=============================================
+.b-tag{
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  overflow: hidden;
+  //@include clearfix;
+
+  a{
+    @include transition();
+    user-select: none;
+
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+
+  }
+
+}
+
+.b-tag-1{
+  display: flex;
+  flex-wrap: wrap;
+
+  >li{
+    margin-right: fun-rem(5);
+    margin-bottom: fun-rem(5);
+
+    >a{
+      position: relative;
+      display: block;
+      padding: fun-rem(2) fun-rem(4) fun-rem(1);
+      border: fun-rem(1) solid $var-color-1;
+      border-radius: fun-rem(4);
+      @include font-size(10);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      @include hover{
+        background-color: $var-color-1;
+        color: #fff;
+      }
+
+      &.active{
+        background-color: $var-color-1;
+        color: #fff;
+      }
+
+    }
+
+  }
+
+}
+
+.b-tag-2{
+  display: flex;
+  flex-wrap: wrap;
+
+  >li{
+    margin-right: fun-rem(10);
+    margin-bottom: fun-rem(10);
+
+    >a{
+      position: relative;
+      display: block;
+      padding: fun-rem(3) fun-rem(5.7) fun-rem(2);
+      border: fun-rem(1) solid $var-color-1;
+      border-radius: fun-rem(4);
+      @include font-size(12);
+      text-transform: uppercase;
+      //letter-spacing: .15px;
+
+      @include hover{
+        background-color: $var-color-1;
+        color: #fff;
+      }
+
+      &.active{
+        background-color: $var-color-1;
+        color: #fff;
+      }
+
+    }
+
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  @media (max-width: 991.98px){
+    >li{
+      margin-right: fun-rem(5);
+      margin-bottom: fun-rem(5);
+    }
+  }
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-tag-3{
+
+  >li{
+    display: flex;
+    align-items: center;
+    margin-bottom: fun-rem(5);
+    @include font-size(12);
+
+    >span{
+      flex: none;
+      padding-right: 12px;
+      width: 62px;
+      text-align: right;
+    }
+
+    >a{
+      position: relative;
+      display: block;
+      padding: fun-rem(3) fun-rem(5.7) fun-rem(2);
+      color: $var-color-0;
+      border: fun-rem(1) solid $var-color-0;
+      border-radius: fun-rem(4);
+      text-transform: uppercase;
+      //letter-spacing: .15px;
+
+      @include hover{
+        background-color: $var-color-0;
+        color: #fff;
+      }
+
+      &.active{
+        background-color: $var-color-0;
+        color: #fff;
+      }
+
+    }
+
+  }
+
+}
+
+.b-tag-4{
+  display: flex;
+  flex-wrap: wrap;
+
+  >li{
+    margin-right: fun-rem(10);
+    margin-bottom: fun-rem(10);
+
+    >a{
+      position: relative;
+      display: block;
+      padding: fun-rem(3) fun-rem(5.7) fun-rem(2);
+      border: fun-rem(1) solid $var-color-3;
+      color: $var-color-3;
+      border-radius: fun-rem(4);
+      @include font-size(12);
+      text-transform: uppercase;
+      //letter-spacing: .15px;
+
+      @include hover{
+        background-color: $var-color-3;
+        color: #fff;
+      }
+
+      &.active{
+        background-color: $var-color-3;
+        color: #fff;
+      }
+
+    }
+
+  }
+
+}

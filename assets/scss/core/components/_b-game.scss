@@ -1,0 +1,214 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// b-game
+////////////////////////////////////////////////
+
+// components
+//=============================================
+//.b-game-card-1{}
+.b-game-field{
+  width: 640px;
+  height: 610px;
+  background: url("../img/svg/playground-4-bg.svg") 50% 50% no-repeat scroll #fff;
+}
+
+.b-game-field-2{
+  position: relative;
+  max-width: 475px;
+  height: 445px;
+  background: url("../img/svg/playground-6-bg.svg") 50% 50% no-repeat scroll #fff;
+
+  &__label-box{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: auto;
+    display: flex;
+
+    &_1{
+      top: 7%;
+      padding: 0 20%;
+      justify-content: space-between;
+    }
+
+    &_2{
+      top: 10%;
+      padding: 0 .5%;
+      justify-content: space-between;
+    }
+
+    &_3{
+      top: 21%;
+      padding: 0 .5%;
+      justify-content: center;
+    }
+
+    &_4{
+      top: 32%;
+      padding: 0 20%;
+      justify-content: space-between;
+    }
+
+    &_5{
+      top: 41%;
+      padding: 0 5%;
+      justify-content: space-between;
+    }
+
+    &_6{
+      top: 45%;
+      padding: 0 5%;
+      justify-content: center;
+    }
+
+    &_7{
+      top: 68%;
+      padding: 0 5%;
+      justify-content: center;
+    }
+  }
+
+  &__label{
+    text-align: center;
+    font-family: $var-font-2;
+    font-size: fun-rem(10);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+}
+
+
+// layout
+//=============================================
+.b-game-box{
+  margin-bottom: fun-rem(20);
+}
+
+.b-game-box-2{
+  position: relative;
+  display: flex;
+  //flex-wrap: wrap;
+
+  &__col{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+
+    &_1{
+      flex: 0 0 420px;
+      max-width: 420px;
+      padding-top: fun-rem(20);
+
+      &::before{
+        position: absolute;
+        content: '';
+        top: 0;
+        right: -12px;
+        left: 0;
+        height: 4px;
+        background-color: #EEF0F2;
+      }
+
+      &::after{
+        position: absolute;
+        content: '';
+        top: 0;
+        right: -12px;
+        bottom: 0;
+        width: 4px;
+        background-color: #EEF0F2;
+      }
+
+    }
+
+    &_2{
+      flex: auto;
+      padding: 0 20px;
+    }
+
+    &_3{
+      flex: 0 0 420px;
+      max-width: 420px;
+      padding-top: fun-rem(20);
+
+      &::before{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: -12px;
+        right: 0;
+        height: 4px;
+        background-color: #EEF0F2;
+      }
+
+      &::after{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: -12px;
+        bottom: 0;
+        width: 4px;
+        background-color: #EEF0F2;
+      }
+
+    }
+
+  }
+
+  &__item{
+    margin-bottom: fun-rem(10);
+  }
+
+}
+
+.b-game-banner-box{
+  margin-bottom: fun-rem(30);
+}
+
+.b-game-nav-box{
+  padding: 0 fun-rem(50);
+  margin-bottom: fun-rem(30);
+
+  //@media (max-width: 1349.98px){}
+  @media (max-width: 1199.98px){
+    padding: 0;
+  }
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+}
+
+.b-game-nav-box-2{
+  padding: 0 fun-rem(5);
+  padding-bottom: fun-rem(20);
+  border-bottom: 4px solid #EEF0F2;
+}
+
+.b-game-grid-box{
+  padding-top: fun-rem(20);
+}
+
+.b-game-field-box{
+  padding: fun-rem(10) 0 fun-rem(20);
+  border-top: 1px solid $var-color-1;
+  border-bottom: 1px solid $var-color-1-l;
+
+  &__radio{
+    margin-bottom: fun-rem(25);
+  }
+
+  @media (max-width: 1349.98px){
+    max-width: 640px;
+    margin: 0 auto;
+    .b-game-field{
+      margin-bottom: fun-rem(20);
+    }
+  }
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}

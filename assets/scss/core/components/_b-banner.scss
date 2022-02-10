@@ -1,0 +1,308 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// b-banner
+////////////////////////////////////////////////
+
+// components
+//=============================================
+.b-banner-link{
+  background-color: $var-color-0;
+  display: block;
+  text-decoration: none;
+  height: 100%;
+  overflow: hidden;
+  @include transition();
+  user-select: none;
+
+  &:focus,
+  &.focus {
+    outline: 0;
+  }
+
+  @include hover-focus{
+    text-decoration: none;
+
+    >img{
+      @include transition();
+      opacity: .9;
+    }
+
+  }
+
+}
+
+.b-banner-1{
+  margin: 0 auto;
+  text-align: center;
+  max-width: 420px;
+  height: 475px;
+
+  .b-banner-link{
+    position: relative;
+    border: 1px solid $var-color-1-l;
+    border-radius: fun-rem(3);
+  }
+
+  @media (max-width: 1349.98px){
+    height: 100%; //407px;
+  }
+
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-banner-2{
+  margin: 0 auto;
+  text-align: center;
+  max-width: 310px;
+  height: 475px;
+
+  .b-banner-link{
+    position: relative;
+    border: 1px solid $var-color-1-l;
+    border-radius: fun-rem(3);
+  }
+
+  @media (max-width: 1349.98px){
+    height: 405px;
+  }
+  @media (max-width: 1199.98px){
+    height: 336px;
+  }
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-banner-2-2{
+  margin: 0 auto;
+  text-align: center;
+  max-width: 310px;
+  height: 430px;
+
+  .b-banner-link{
+    box-shadow: 0 4px 8px #A4A9AD;
+  }
+
+}
+
+.b-banner-3{
+  background: url("../img/banner-3-bg-1.png") 100% 0 no-repeat scroll $var-color-1;
+  padding: fun-rem(10);
+  margin: fun-rem(2) 0;
+  height: 200px;
+  color: #fff;
+  display: flex;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+
+  &__img{
+    flex: none;
+    margin-right: 20px;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title{
+    @include font-size(34);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  &__desc{
+    @include font-size(14);
+  }
+
+}
+
+.b-banner-4{
+  margin: 0 auto;
+  text-align: center;
+  max-width: 310px;
+  height: 420px;
+
+  .b-banner-link{
+    border-radius: fun-rem(3);
+  }
+
+}
+
+.b-banner-5{
+  margin: 0 auto;
+  text-align: center;
+  max-width: 310px;
+  height: 520px;
+}
+
+.b-banner-6{
+  margin: 0 0 fun-rem(2);
+  height: 200px;
+  color: #fff;
+  display: flex;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+
+  &__row{
+    min-width: 759px;
+    display: flex;
+    padding: 0 0 0 fun-rem(20);
+  }
+
+  &__img{
+    flex: none;
+    width: 160px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 0.5px solid $var-color-1;
+    border-bottom: 0.5px solid $var-color-1;
+  }
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: auto;
+    padding: fun-rem(10) 0 fun-rem(20) fun-rem(20);
+  }
+
+  &__header{
+    flex: auto;
+  }
+
+  &__footer{
+
+    .b-soc-1{
+      padding-left: fun-rem(95);
+    }
+
+  }
+
+  &__title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.4;
+
+   > h1{
+     margin-bottom: 0;
+     @include font-size(34);
+     font-weight: 700;
+     color: #fff;
+   }
+
+    >span{
+      @include font-size(34);
+      font-weight: 700;
+    }
+
+  }
+
+  &__desc{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    @include font-size(14);
+
+    li{
+
+      >span + span{
+        display: inline-block;
+        position: relative;
+        padding-left: 5px;
+        margin-left: 5px;
+
+        &::before{
+          display: inline-block;
+          position: relative;
+          left: -5px;
+          content: '/';
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+.b-banner-1300-200{
+  margin: 0 auto;
+  text-align: center;
+  max-width: 100%;
+  height: 200px;
+
+  &__link{
+    position: relative;
+    border: 1px solid $var-color-1-l;
+    border-radius: fun-rem(3);
+  }
+
+}
+
+.b-banner-player{
+  background: url("../img/banner-player-bg.png") 100% 0 no-repeat scroll $var-color-1;
+}
+
+.b-banner-coach{
+  background: url("../img/banner-coach-bg.png") 100% 0 no-repeat scroll $var-color-1;
+}
+
+.b-banner-school{
+  background: url("../img/banner-school-bg.png") 100% 0 no-repeat scroll $var-color-1;
+}
+
+.b-banner-310-410{
+  margin: 0 auto;
+  text-align: center;
+  max-width: 310px;
+  height: 410px;
+
+  .b-banner-link{
+    position: relative;
+    border: 1px solid $var-color-1-l;
+    border-radius: fun-rem(3);
+  }
+
+}
+
+
+// layout
+//=============================================
+.b-banner-box-1{
+  margin-bottom: fun-rem(20);
+
+  .b-banner-2-2 + .b-banner-2-2{
+    margin-top: fun-rem(10);
+  }
+
+}
+
+.b-banner-box-2{
+  margin-bottom: fun-rem(20);
+
+  .b-banner-2 + .b-banner-2{
+    margin-top: fun-rem(10);
+  }
+
+}
+
+.b-banner-box-3{
+  margin-bottom: fun-rem(20);
+
+  &__item{
+    margin-bottom: fun-rem(10);
+  }
+
+}

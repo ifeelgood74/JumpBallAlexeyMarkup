@@ -1,0 +1,53 @@
+//@import "./config";
+//@import "../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// import components
+////////////////////////////////////////////////
+
+//@import './components/b-list';
+
+@import './components/extend';
+@import './components/b-animation';
+@import './components/b-image';
+@import './components/b-link-button';
+
+@import './components/b-title';
+@import './components/b-nav';
+@import './components/b-breadcrumb-pagination';
+@import './components/b-form';
+@import './components/b-totop';
+@import './components/b-soc';
+@import './components/b-tag';
+
+@import './components/b-control';
+@import './components/b-publication';
+@import './components/b-player';
+@import './components/b-team';
+@import './components/b-coach';
+@import './components/b-school';
+@import './components/b-table';
+@import './components/b-video-player';
+@import './components/b-feature';
+@import './components/b-statistics';
+@import './components/b-success';
+@import './components/b-calendar';
+@import './components/b-game';
+@import './components/b-tournament';
+@import './components/b-banner';
+
+//@import '/gradient';
+//@import '/button';  //links & buttons
+//@import '/form';
+//@import './components/b-checkbox-radio';
+//@import '/modal';
+//@import '/social';
+//@import '/label';  // label, icon, etc.
+//@import '/table';
+//@import '/typography';
+
+// end
+//@import './components/b-box';
+@import './components/b-layout';
+@import './components/b-helpers'; // bg, gradient, divider
+@import './components/b-test';

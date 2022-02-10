@@ -1,0 +1,991 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// b-coach
+////////////////////////////////////////////////
+
+// components
+//=============================================
+.b-coach-card-1{
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  max-width: 370px;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    margin-right: -1px;
+    flex: none;
+    overflow: hidden;
+    border: 1px solid $var-color-5;
+    border-radius: 3px 0 0 3px;
+    width: 110px;
+    height: 145px;
+  }
+
+  &__col-2{
+    flex: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: fun-rem(10) 0 fun-rem(10) fun-rem(10);
+    border: 1px solid $var-color-5;
+    border-radius: 0 3px 3px 0;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    height: 100%;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: 0 fun-rem(10) 0 0;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__title{
+    margin-bottom: fun-rem(4);
+    @include font-size(18);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  &__title-link{
+    display: block;
+    color: $var-color-0;
+
+    @include hover-focus{
+      color: $var-color-1;
+    }
+
+  }
+
+  &__divider{
+    margin-bottom: fun-rem(5);
+    background: $var-color-1-l;
+    width: 80px;
+    height: 3px;
+    border-radius: 5px;
+  }
+
+  &__role{
+    margin-bottom: fun-rem(5);
+    @include font-size(12);
+  }
+
+  &__team{
+    margin-bottom: fun-rem(2);
+    @include font-size(12);
+    color: $var-color-1;
+  }
+
+  &__city{
+    @include font-size(10);
+    color: $var-color-1-l;
+  }
+
+  &__logo{
+    margin-top: auto;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_right{
+    margin-left: auto;
+
+    .b-coach-card-1__img{
+      margin-left: -1px;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .b-coach-card-1__col-2{
+      padding-left: 0;
+      border-radius: 3px 0 0 3px;
+      text-align: right;
+    }
+
+    .b-coach-card-1__divider{
+      margin-left: auto;
+    }
+
+  }
+
+}
+
+.b-coach-card-2{
+  position: relative;
+  display: block;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  width: 200px;
+  min-height: 330px;
+  overflow: hidden;
+  text-align: center;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 250px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    min-height: 60px;
+  }
+
+  &__caption-title{
+    margin-bottom: 0;
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+
+    >a{
+      display: block;
+      color: #fff;
+
+      @include hover-focus{
+        color: $var-color-1;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(8) fun-rem(10) fun-rem(3);
+  }
+
+  &__divider{
+    margin: 0 auto fun-rem(4);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+  }
+
+  &__rang{
+    @include font-size(14);
+  }
+
+  &__desc{
+    @include font-size(12);
+    color: $var-color-1-l;
+  }
+
+}
+
+.b-coach-card-3{
+  position: relative;
+  display: block;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  width: 200px;
+  height: 280px;
+  overflow: hidden;
+  text-align: center;
+  //border: 1px solid rgba(20, 110, 180, 0.2);
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 280px;
+    margin: -1px;
+    //margin: -1px -1px 0;
+    //height: 280px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    min-height: 60px;
+  }
+
+  &__caption-title{
+    margin-bottom: 0;
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+
+    >a{
+      display: block;
+      color: #fff;
+
+      @include hover-focus{
+        color: $var-color-1;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(8) fun-rem(10) fun-rem(3);
+  }
+
+  &__rang{
+    @include font-size(14);
+  }
+
+  &__desc{
+    @include font-size(12);
+    color: $var-color-1-l;
+  }
+
+  &__share{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    flex: none;
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+
+    }
+
+  }
+
+}
+
+.b-coach-card-4{
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  max-width: 420px;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    margin-right: -1px;
+    flex: none;
+    overflow: hidden;
+    border: 1px solid $var-color-5;
+    border-radius: 3px 0 0 3px;
+    width: 160px;
+    height: 200px;
+  }
+
+  &__col-2{
+    flex: auto;
+    padding: fun-rem(10) fun-rem(10) fun-rem(0);
+    border: 1px solid $var-color-5;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__top{
+    margin-bottom: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    height: 100%;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__title{
+    margin-bottom: fun-rem(2);
+    @include font-size(20);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  &__title-link{
+    display: block;
+    color: $var-color-0;
+
+    @include hover-focus{
+      color: $var-color-1;
+    }
+
+  }
+
+  &__info{
+    margin-bottom: fun-rem(3);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $var-color-5;
+  }
+
+  &__score{
+    @include font-size(34);
+    font-weight: 700;
+
+    span{
+      color: $var-color-1;
+    }
+
+  }
+
+  &__info-main{
+    padding-left: fun-rem(10);
+    line-height: 1.1;
+  }
+
+  &__info-1{
+    margin-bottom: fun-rem(1);
+    @include font-size(14);
+    font-weight: 700;
+  }
+
+  &__info-2{
+    @include font-size(14);
+    font-weight: 700;
+    color: $var-color-1;
+  }
+
+  &__divider{
+    margin-bottom: fun-rem(3);
+    background: $var-color-2;
+    //width: 80px;
+    height: 4px;
+    border-radius: 3px;
+  }
+
+  &__team{
+    margin-bottom: fun-rem(0);
+    @include font-size(10);
+    font-weight: 400;
+  }
+
+  &__logo{
+    flex: none;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: 3px;
+  }
+
+  &__share{
+    flex: none;
+    margin: 0 fun-rem(10);
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+    }
+  }
+
+  &_right{
+    margin-left: auto;
+
+    .b-coach-card-4__img{
+      margin-left: -1px;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .b-coach-card-4__col-2{
+      border-radius: 3px 0 0 3px;
+      text-align: right;
+      border: 1px solid $var-color-5;
+      border-right: none
+    }
+
+    .b-coach-card-4__divider{
+      margin-left: auto;
+    }
+
+    .b-coach-card-4__info{
+      justify-content: flex-end;
+    }
+
+  }
+
+}
+
+.b-coach-card-5{
+  position: relative;
+  display: block;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  //border: 1px solid $var-color-5;
+  border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+  max-width: 200px;
+  min-height: 330px;
+  overflow: hidden;
+  text-align: center;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__img{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__img-link{
+    position: relative;
+    display: block;
+    margin: -1px -1px 0;
+    height: 250px;
+
+    @include hover-focus{
+
+      >img{
+        @include transition();
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+  &__caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    min-height: 60px;
+  }
+
+  &__caption-title{
+    margin-bottom: 0;
+    @include font-size(16);
+    font-weight: 700;
+    line-height: 1.13;
+
+    >a{
+      display: block;
+      color: #fff;
+
+      @include hover-focus{
+        color: $var-color-1;
+      }
+
+    }
+
+  }
+
+  &__content{
+    padding: fun-rem(5) fun-rem(5) fun-rem(5);
+  }
+
+  &__divider{
+    margin: 0 auto fun-rem(3);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 60px;
+    height: 5px;
+    border-radius: 3px;
+  }
+
+  &__divider-2{
+    margin: fun-rem(2) auto fun-rem(3);
+    background-color: $var-color-1-l;
+    display: block;
+    width: 80px;
+    height: 1px;
+  }
+
+  &__rang{
+    @include font-size(10);
+  }
+
+  &__desc{
+    margin-bottom: fun-rem(5);
+    @include font-size(10);
+    color: $var-color-1-l;
+  }
+
+  &__team{
+    padding-top: fun-rem(2);
+    @include font-size(10);
+    border-top: 1px solid $var-color-5;
+  }
+
+  &__num{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    @include font-size(34);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__logo{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+  }
+
+  &__share{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    flex: none;
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+
+    }
+
+  }
+
+}
+
+.b-coach-info{
+
+  .b-coach-card-2{
+    margin-bottom: fun-rem(20);
+  }
+
+  .b-team-card-6, .b-success-card-1{
+    margin-bottom: fun-rem(20);
+    min-height: 250px;
+  }
+
+  &__btn{
+    margin-bottom: fun-rem(20);
+  }
+
+}
+
+.b-coach-info-2{
+
+  .b-title-3{
+    margin-bottom: fun-rem(14);
+  }
+
+  &__row{
+    display: flex;
+  }
+
+  &__col{
+
+    &_1{
+      flex: none;
+      min-width: 200px;
+      margin-right: 10px;
+    }
+
+    &_2{
+      flex: auto;
+      margin-right: 10px;
+      padding: fun-rem(10);
+    }
+
+    &_3{
+      flex: none;
+      width: 250px;
+      justify-self: flex-end;
+      margin-right: 10px;
+      padding: fun-rem(10);
+    }
+
+    &_4{
+      flex: none;
+      width: 310px;
+      justify-self: flex-end;
+      padding: fun-rem(10);
+    }
+  }
+
+  &__success{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+  }
+
+  &__success-item{
+    flex: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-bottom: fun-rem(6);
+  }
+
+  &__soc{
+    margin-bottom: fun-rem(20);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    >li{
+      display: block;
+      margin: 0 fun-rem(10) fun-rem(20);
+
+      //&:last-child{
+      //  margin-right: 0;
+      //}
+
+      >a{
+        display: block;
+        @include transition();
+
+        @include hover-focus{
+          opacity: .8;
+        }
+
+      }
+
+    }
+
+  }
+
+  &__btn{
+    margin-bottom: fun-rem(20);
+  }
+
+  &__divider{
+    margin: fun-rem(3) auto fun-rem(3) 0;
+    background-color: $var-color-1-l;
+    display: block;
+    width: 60px;
+    height: 4px;
+    border-radius: 3px;
+  }
+
+  &__info{
+    padding-left: fun-rem(0);
+    margin-bottom: fun-rem(0);
+    list-style: none;
+    font-family: $var-font-2;
+    @include font-size(14);
+    font-weight: 400;
+    line-height: 1.58;
+    text-transform: uppercase;
+
+    >li{
+      display: flex;
+
+      span{
+        padding-right: fun-rem(8);
+        flex: none;
+        display: inline-block;
+        min-width: 120px;
+        //color: $var-color-0;
+        //color: $var-color-1;
+      }
+
+    }
+
+  }
+
+  &__info-wrap{
+    padding: fun-rem(20) 0 0 fun-rem(20);
+  }
+
+}
+
+.b-coach-info-3{
+  padding: fun-rem(24) fun-rem(20);
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+
+  &__info{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: $var-font-2;
+    @include font-size(20);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $var-color-1;
+
+    >li{
+      display: flex;
+
+      >span{
+        flex: none;
+        padding-right: fun-rem(5);
+        min-width: 210px;
+        color: $var-color-0;
+      }
+    }
+
+  }
+
+  @media (max-width: 1199.98px){
+    &__info{
+      @include font-size(17);
+    }
+  }
+
+  @media (max-width: 991.98px){
+    &__info{
+      @include font-size(16);
+    }
+  }
+
+  @media (max-width: 767.98px){
+    &__info{
+      min-width: 500px;
+    }
+  }
+
+}
+
+.b-coach-career{
+  padding: fun-rem(10) fun-rem(20);
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-family: $var-font-2;
+  text-transform: uppercase;
+
+  &__year{
+    flex: none;
+    @include font-size(34);
+    font-weight: 700;
+    //color: $var-color-1;
+    line-height: 1.1;
+  }
+
+  &__main{
+    flex: 1;
+    padding-left: 10px;
+    font-weight: 700;
+  }
+
+  &__name{
+    @include font-size(20);
+    //color: $var-color-1;
+  }
+
+  &__city{
+    @include font-size(14);
+    color: $var-color-1-l;
+  }
+
+  &__img{
+    flex: none;
+    margin-left: auto;
+    position: relative;
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 767.98px){
+    min-width: 500px;
+
+    &__year{
+      @include font-size(28);
+    }
+  }
+
+}
+
+
+// layout
+//=============================================
+.b-coach-box{
+  margin-bottom: fun-rem(30);
+
+  &__item{
+    padding-bottom: fun-rem(9);
+    margin-bottom: fun-rem(20);
+    border-bottom: 1px solid $var-color-1-l;
+  }
+
+}
+
+.b-coach-box-2{
+  padding-bottom: fun-rem(20);
+
+  &__title{
+    margin-bottom: fun-rem(40);
+   // border-bottom: 1px solid $var-color-1-l;
+  }
+
+  &__item{
+    margin-bottom: fun-rem(20);
+  }
+
+  @media (max-width: 1199.98px){
+    &__title{
+      margin-bottom: fun-rem(30);
+    }
+  }
+  @media (max-width: 991.98px){
+    &__title{
+      margin-bottom: fun-rem(20);
+    }
+  }
+
+}
+
+.b-coach-box-3{
+  padding-bottom: fun-rem(10);
+}

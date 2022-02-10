@@ -1,0 +1,4761 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// b-tournament
+////////////////////////////////////////////////
+
+// components
+//=============================================
+.b-tournament-card-1{
+  background-color: #fff;
+  padding: fun-rem(9.5) fun-rem(15);
+  border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+  @include font-size(12);
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  max-width: 312.5px;
+  @include transition();
+
+  @include hover{
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.24);
+    border-color: $var-color-1;
+  }
+
+  &__divider{
+    background-color: $var-color-1-l;
+    margin-right: auto;
+    width: 70px;
+    height: 2px;
+    border-radius: fun-rem(3);
+  }
+
+  &__header{
+    margin-bottom: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__body{
+    padding: fun-rem(1) 0;
+    border-top: 1px solid $var-color-1-l;
+    border-bottom: 1px solid $var-color-1-l;
+  }
+
+  &__footer{
+    padding-top: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include font-size(10);
+    color: $var-color-1-l;
+  }
+
+  &__date{
+    color: $var-color-1-l;
+    display: flex;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  //&__status{}
+
+  &__team{
+    padding: fun-rem(3) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__team-box{
+    flex: auto;
+  }
+
+  &__team-name{
+    color: $var-color-1;
+  }
+
+  &__team-city{
+    @include font-size(10);
+    color: $var-color-4;
+  }
+
+  &__team-score{
+    flex: none;
+    @include font-size(26);
+    font-weight: 700;
+    color: $var-color-1-l;
+  }
+
+  &__tour{
+    display: flex;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+        color: $var-color-1-l;
+      }
+
+    }
+
+  }
+
+  //&__year{}
+
+  &_game-over{
+
+    .b-tournament-card-1__team-score_1,
+    .b-tournament-card-1__team-score_2,
+    .b-tournament-card-1__team-name{
+      color: $var-color-0;
+    }
+
+    .b-tournament-card-1__divider{
+      background-color: $var-color-0;
+    }
+
+  }
+
+  &_online{
+
+    .b-tournament-card-1__status{
+      position: relative;
+      padding-right: 15px;
+      color: $var-color-3;
+
+      &::before{
+        position: absolute;
+        content: '';
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #FF0303;
+      }
+
+    }
+
+    .b-tournament-card-1__team-score_1{
+      color: $var-color-3;
+    }
+
+    .b-tournament-card-1__team-score_2{
+      color: $var-color-3;
+    }
+
+    .b-tournament-card-1__date{
+      color: $var-color-3;
+    }
+
+    .b-tournament-card-1__body{
+      border-top-color: $var-color-3;
+    }
+
+    .b-tournament-card-1__divider{
+      background-color: $var-color-3;
+    }
+
+  }
+
+}
+
+.b-tournament-card-2{
+
+  &__row{
+    position: relative;
+    display: flex;
+    align-items: center;
+    //flex-wrap: wrap;
+  }
+
+  &__col{
+    //position: relative;
+    //width: 100%;
+    ///min-height: 1px;
+
+    &_1{
+      //flex: 0 0 40%; //41.66667%;
+      //max-width: 40%; //41.66667%;
+      flex: 1;
+      padding-right: 10px;
+    }
+
+    &_2{
+      //flex: 0 0 20%;
+      //max-width: 20%;
+      flex: none;
+      min-width: 160px;
+      min-height: 110px;
+    }
+
+    &_3{
+      //flex: 0 0 40%;
+      //max-width: 40%;
+      flex: 1;
+      padding-left: 10px;
+    }
+
+  }
+
+  &__score{
+    background-color: #fff;
+    padding: fun-rem(5) fun-rem(5);
+    font-family: $var-font-2;
+    @include font-size(14);
+    width: 100%;
+    min-height: 110px;
+    border: 1px solid $var-color-5; //rgba(20, 110, 180, 0.2);
+    border-radius: fun-rem(3);
+    color: $var-color-1;
+    text-align: center;
+    text-transform: uppercase;
+
+    &_color{
+      background-color: $var-color-1;
+      color: #fff;
+
+      .b-tournament-card-2__score-1{
+        color: #fff;
+      }
+
+      .b-tournament-card-2__score-2{
+        color: #fff;
+      }
+
+    }
+
+  }
+
+  &__score-1{
+    color: $var-color-1-l;
+  }
+
+  &__score-2{
+    color: $var-color-1-l;
+  }
+
+  &__score-3{
+    @include font-size(34);
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  &__score-4{
+    background-color: $var-color-1-l;
+    display: block;
+    margin: 0 auto fun-rem(5);
+    width: 40px;
+    height: 1px;
+  }
+
+  &__score-5{
+
+    &_color{
+      color: #FF0303;
+    }
+
+  }
+
+}
+
+.b-tournament-card-3{
+  position: relative;
+  margin-bottom: fun-rem(10);
+  padding: fun-rem(5) fun-rem(5);
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  font-family: $var-font-2;
+  text-transform: uppercase;
+
+  &__header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__date{
+    padding-bottom: fun-rem(2);
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include font-size(8);
+    border-bottom: 1px solid $var-color-5;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &__body{
+    margin-bottom: fun-rem(2);
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__score{
+    flex: none;
+    padding: 0 5px;
+    min-width: 80px;
+    @include font-size(18);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+
+  &__team{
+    flex: 1;
+
+    &_left{
+      text-align: right;
+    }
+
+  }
+
+  &__team-1{
+    @include font-size(10);
+    color: $var-color-1;
+  }
+
+  &__team-2{
+    @include font-size(8);
+    color: $var-color-4;
+  }
+
+  //&__footer{}
+
+  &__score-2{
+    //margin-bottom: fun-rem(2);
+    @include font-size(8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &__place{
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include font-size(8);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &__logo{
+    position: absolute;
+    bottom: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_1{
+      left: 5px;
+    }
+
+    &_2{
+      right: 5px;
+    }
+
+  }
+
+}
+
+.b-tournament-card-4{
+  position: relative;
+  background-color: #fff;
+  padding: fun-rem(9.5) fun-rem(15);
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  @include font-size(12);
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  max-width: 312px;
+  min-height: 160px;
+  z-index: 2;
+  @include transition();
+
+  @include hover{
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.24);
+    border-color: $var-color-1;
+  }
+
+  &__divider{
+    background-color: $var-color-2;
+    margin-right: auto;
+    width: 70px;
+    height: 2px;
+    border-radius: fun-rem(3);
+  }
+
+  &__header{
+    margin-bottom: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__body{
+    padding: fun-rem(1) 0;
+    border-top: 1px solid $var-color-1-l;
+    border-bottom: 1px solid $var-color-1-l;
+  }
+
+  &__footer{
+    padding-top: fun-rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include font-size(10);
+    color: $var-color-1-l;
+  }
+
+  &__date{
+    color: $var-color-1-l;
+    display: flex;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  //&__status{}
+
+  &__team{
+    padding: fun-rem(3) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__team-wins{
+    display: flex;
+    align-items: center;
+  }
+
+  &__team-group{
+    flex: none;
+    margin-right: fun-rem(2);
+    min-width: 24px;
+    @include font-size(18);
+    font-weight: 700;
+    color: $var-color-4;
+  }
+
+  &__team-group-2{
+    flex: none;
+    margin-left: fun-rem(10);
+    @include font-size(18);
+    font-weight: 700;
+    color: $var-color-4;
+  }
+
+  &__team-box{
+    flex: auto;
+  }
+
+  &__team-name{
+    color: $var-color-1;
+  }
+
+  &__team-city{
+    @include font-size(10);
+    color: $var-color-4;
+  }
+
+  &__team-score{
+    flex: none;
+    @include font-size(26);
+    font-weight: 700;
+    color: $var-color-1-l;
+  }
+
+  &__tour{
+    display: flex;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+        color: $var-color-1-l;
+      }
+
+    }
+
+  }
+
+  &__label{
+    position: absolute;
+    top: -38px;
+    right: 0;
+    @include font-size(26);
+    font-family: $var-font-2;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #EEF0F2;
+    border-bottom: 4px solid #EEF0F2;
+    line-height: 1.1;
+  }
+
+  //&__year{}
+
+  &_game-over,
+  &_online{
+
+    .b-tournament-card-4__team-score_1{
+      color: #FF0303;
+    }
+
+    .b-tournament-card-4__team-score_2{
+      color: $var-color-1;
+    }
+
+  }
+
+  &_online{
+
+    .b-tournament-card-4__status{
+      position: relative;
+      padding-right: 15px;
+      color: #FF0303;
+
+      &::before{
+        position: absolute;
+        content: '';
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #FF0303;
+      }
+
+    }
+
+    .b-tournament-card-4__team-score_2{
+      color: $var-color-1;
+    }
+
+    .b-tournament-card-4__date{
+      color: #FF0303;
+    }
+
+    .b-tournament-card-4__body{
+      border-color: $var-color-3-l;
+    }
+
+    .b-tournament-card-4__divider{
+      background-color: $var-color-3-l;
+    }
+
+
+  }
+
+}
+
+.b-tournament-card-5{
+  position: relative;
+  padding: fun-rem(19) fun-rem(20);
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  @include transition();
+
+  @include hover{
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.24);
+  }
+
+  &__tournament{
+    position: relative;
+    padding-left: fun-rem(30);
+    padding-right: fun-rem(10);
+    flex: auto;
+    line-height: 1.2;
+
+    &::before{
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: fun-rem(20);
+      border-radius: fun-rem(2);
+      background-color: $var-color-1;
+    }
+
+    &_color_2{
+      &::before{
+        background-color: $var-color-3;
+      }
+    }
+
+  }
+
+  &__tournament-1{
+    //margin-bottom: fun-rem(5);
+    @include font-size(20);
+    font-weight: 700;
+  }
+
+  &__tournament-2{
+    //margin-bottom: fun-rem(5);
+    @include font-size(14);
+    font-weight: 700;
+    color: $var-color-1;
+    letter-spacing: .5px;
+
+    &_color_2{
+      color: $var-color-3;
+    }
+  }
+
+  &__logo{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  @media (max-width: 767.98px){
+    &__tournament-1{
+      @include font-size(18);
+    }
+
+    &__tournament-2{
+      @include font-size(12);
+    }
+  }
+  @media (max-width: 575.98px){
+    &__tournament-1{
+      @include font-size(16);
+    }
+
+    &__tournament-2{
+      @include font-size(10);
+    }
+  }
+
+}
+
+.b-tournament-card-6{
+
+  &__row{
+    position: relative;
+    display: flex;
+    align-items: center;
+    //flex-wrap: wrap;
+  }
+
+  &__col{
+    //position: relative;
+    //width: 100%;
+    ///min-height: 1px;
+
+    &_1{
+      //flex: 0 0 40%; //41.66667%;
+      //max-width: 40%; //41.66667%;
+      flex: 1;
+      padding-right: 10px;
+    }
+
+    &_2{
+      //flex: 0 0 20%;
+      //max-width: 20%;
+      flex: none;
+      min-width: 150px;
+      min-height: 110px;
+    }
+
+    &_3{
+      //flex: 0 0 40%;
+      //max-width: 40%;
+      flex: 1;
+      padding-left: 10px;
+    }
+
+  }
+
+  &__score{
+    background-color: #fff;
+    padding: fun-rem(20) fun-rem(10);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: $var-font-2;
+    @include font-size(14);
+    font-weight: 700;
+    width: 100%;
+    min-height: 180px;
+    border: 1px solid $var-color-5; //rgba(20, 110, 180, 0.2);
+    border-radius: fun-rem(3);
+    color: $var-color-1;
+    text-align: center;
+    text-transform: uppercase;
+
+    &__top{
+      flex: auto;
+    }
+
+    &__bottom{
+      flex: none;
+    }
+
+    &_color{
+      background-color: $var-color-1;
+      color: #fff;
+
+      .b-tournament-card-6__score-1{
+        color: #fff;
+      }
+
+      .b-tournament-card-6__score-2{
+        color: #fff;
+      }
+
+      .b-tournament-card-6__score-4{
+        background-color: $var-color-2;
+      }
+
+    }
+
+    &_disabled{
+      background-color: $var-color-1-l;
+      color: #fff;
+
+      .b-tournament-card-6__score-1{
+        color: #fff;
+      }
+
+      .b-tournament-card-6__score-2{
+        color: #fff;
+      }
+
+      .b-tournament-card-6__score-4{
+        background-color: #fff;
+      }
+
+    }
+
+  }
+
+  &__score-1{
+    color: $var-color-0;
+  }
+
+  &__score-2{
+    @include font-size(18);
+  }
+
+  &__score-3{
+    @include font-size(34);
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  &__score-4{
+    background-color: $var-color-1-l;
+    display: block;
+    margin: 0 auto fun-rem(5);
+    height: 4px;
+    border-radius: 3px;
+  }
+
+  &__score-5{
+
+    &_color{
+      color: $var-color-3;
+    }
+
+  }
+
+}
+
+// mod 2
+.b-tournament-card-7{
+
+  &__row{
+    position: relative;
+    display: flex;
+    align-items: center;
+    //flex-wrap: wrap;
+  }
+
+  &__col{
+    //position: relative;
+    //width: 100%;
+    ///min-height: 1px;
+
+    &_1{
+      //flex: 0 0 40%; //41.66667%;
+      //max-width: 40%; //41.66667%;
+      flex: 1;
+      padding-right: 10px;
+    }
+
+    &_2{
+      //flex: 0 0 20%;
+      //max-width: 20%;
+      flex: none;
+      min-width: 160px;
+      min-height: 110px;
+    }
+
+    &_3{
+      //flex: 0 0 40%;
+      //max-width: 40%;
+      flex: 1;
+      padding-left: 10px;
+    }
+
+  }
+
+  &__score{
+    background-color: #fff;
+    padding: fun-rem(5) fun-rem(5);
+    font-family: $var-font-2;
+    @include font-size(14);
+    width: 100%;
+    min-height: 110px;
+    border: 1px solid $var-color-5; //rgba(20, 110, 180, 0.2);
+    border-radius: fun-rem(3);
+    color: $var-color-1;
+    text-align: center;
+    text-transform: uppercase;
+
+    &_color{
+      background-color: $var-color-1;
+      color: #fff;
+
+      .b-tournament-card-7__score-1{
+        color: #fff;
+      }
+
+      .b-tournament-card-7__score-2{
+        color: #fff;
+      }
+
+    }
+
+  }
+
+  &__score-1{
+    color: $var-color-1-l;
+  }
+
+  &__score-2{
+    color: $var-color-1-l;
+  }
+
+  &__score-3{
+    @include font-size(34);
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  &__score-4{
+    background-color: $var-color-1-l;
+    display: block;
+    margin: 0 auto fun-rem(5);
+    width: 40px;
+    height: 1px;
+  }
+
+  &__score-5{
+
+    &_color{
+      color: #FF0303;
+    }
+
+  }
+
+}
+
+.b-tournament-leader-title{
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: fun-rem(20);
+  font-family: $var-font-2;
+  @include font-size(20);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+
+  &::before{
+    position: absolute;
+    content: '';
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: $var-color-2;
+  }
+
+  &__icon{
+    flex: none;
+    margin-right: fun-rem(3);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+.b-tournament-leader-title-2{
+  margin-bottom: fun-rem(10);
+  padding: fun-rem(5);
+  font-family: $var-font-2;
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-align: center;
+
+  &__img{
+    margin-bottom: fun-rem(5);
+  }
+
+  &__title{
+    margin-bottom: fun-rem(2);
+    @include font-size(20);
+    font-weight: 700;
+  }
+
+  &__divider{
+    margin: 0 auto fun-rem(5);
+    width: 60px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: $var-color-2;
+  }
+
+  &__desc{
+    @include font-size(10);
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  @media (max-width: 575.98px){
+    &__img{
+      width: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: fun-rem(5);
+    }
+  }
+
+}
+
+.b-tournament-date{
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: fun-rem(6);
+  line-height: 1.34;
+
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: 7px;
+    left: 0;
+    width: 20px;
+    height: 36px;
+    background: $var-color-2;
+    border-radius: 3px;
+  }
+
+  &__row{
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__day{
+    flex: none;
+    min-width: fun-rem(54);
+    margin-right: fun-rem(10);
+    @include font-size(46);
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  &__date{
+    padding-bottom: fun-rem(4);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__year{
+    margin-bottom: fun-rem(2);
+    font-family: $var-font-2;
+    @include font-size(12);
+    text-align: right;
+  }
+
+  &__month{
+    padding-right: fun-rem(15);
+    @include font-size(18);
+    font-weight: 700;
+    color: $var-color-1;
+  }
+
+  &__week{
+    padding-right: fun-rem(15);
+    @include font-size(10);
+  }
+
+}
+
+.b-tournament-date-2{
+  position: relative;
+  padding: 0 fun-rem(5);
+  line-height: 1.34;
+
+  &__row{
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__day{
+    flex: none;
+    min-width: fun-rem(55);
+    margin-right: fun-rem(10);
+    @include font-size(48);
+    color: $var-color-1;
+    line-height: 1;
+    text-align: center;
+  }
+
+  &__date{
+    padding-bottom: fun-rem(4);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__year{
+    margin-bottom: fun-rem(2);
+    font-family: $var-font-2;
+    @include font-size(12);
+    text-align: right;
+  }
+
+  &__month{
+    padding-right: fun-rem(15);
+    @include font-size(18);
+    font-weight: 700;
+    color: $var-color-1;
+    text-align: left;
+  }
+
+  &__week{
+    padding-right: fun-rem(15);
+    @include font-size(10);
+    text-align: left;
+  }
+
+}
+
+.b-tournament-date-3{
+  position: relative;
+  margin-bottom: fun-rem(40);
+  line-height: 1.34;
+
+  &__row{
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__day{
+    flex: none;
+    min-width: fun-rem(56);
+    margin-right: fun-rem(11);
+    @include font-size(48);
+    color: $var-color-1;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  &__date{
+    padding-bottom: fun-rem(4);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__year{
+    margin-bottom: fun-rem(8.4);
+    @include font-size(12);
+    text-align: right;
+  }
+
+  &__month{
+    @include font-size(18);
+    font-weight: 700;
+    color: $var-color-1;
+  }
+
+  &__week{
+    @include font-size(10);
+  }
+
+  &_2{
+    padding-bottom: fun-rem(20);
+    margin-bottom: fun-rem(20);
+    border-bottom: 1px solid $var-color-1-l;
+  }
+
+}
+
+.b-tournament-playground{
+  margin-bottom: fun-rem(75);
+  position: relative;
+  padding: fun-rem(10) fun-rem(10) fun-rem(15);
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+
+  &__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: $var-font-2;
+  }
+
+  &__time{
+    @include font-size(18);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FF0303;
+    min-width: 14%;
+  }
+
+  &__status{
+    position: relative;
+    padding-right: 20px;
+    @include font-size(18);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FF0303;
+    min-width: 14%;
+    text-align: right;
+
+    &::before{
+      position: absolute;
+      content: '';
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: #FF0303;
+    }
+  }
+
+  &__body{
+    margin-bottom: fun-rem(2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__team{
+    min-width: 37%;
+  }
+
+  &__date{
+    padding-bottom: fun-rem(2);
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include font-size(12);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    border-bottom: 1px solid $var-color-1-l;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &__score{
+    font-family: $var-font-2;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  &__score-1{
+    @include font-size(18);
+    color: $var-color-1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  &__score-2{
+    @include font-size(26);
+    font-weight: 700;
+    color: $var-color-1;
+    letter-spacing: 0.1em;
+  }
+
+  &__score-3{
+    @include font-size(52);
+    font-weight: 700;
+    line-height: 1.14;
+  }
+
+  &__score-4{
+    @include font-size(18);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &__footer{
+    display: flex;
+    justify-content: center;
+  }
+
+  &__place{
+    padding-top: fun-rem(2);
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    @include font-size(12);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    border-top: 1px solid $var-color-1-l;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: -75px;
+    left: 0;
+    right: 0;
+    height: 90px;
+    background: url("../img/playground-bg.png") 50% 50%/contain no-repeat scroll;
+  }
+
+}
+
+.b-tournament-playground-1{
+  margin-bottom: fun-rem(110);
+  position: relative;
+  padding: fun-rem(10) fun-rem(10) fun-rem(10);
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+
+  &__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: $var-font-2;
+  }
+
+  &__time{
+    @include font-size(18);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $var-color-3;
+    min-width: 14%;
+  }
+
+  &__status{
+    position: relative;
+    padding-right: 20px;
+    @include font-size(18);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $var-color-3;
+    min-width: 14%;
+    text-align: right;
+
+    &::before{
+      position: absolute;
+      content: '';
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: $var-color-3;
+    }
+  }
+
+  &__body{
+    margin-bottom: fun-rem(2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__team{
+    min-width: 37%;
+  }
+
+  &__date{
+    padding-bottom: fun-rem(2);
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include font-size(12);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    border-bottom: 1px solid $var-color-1-l;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &__score{
+    font-family: $var-font-2;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  &__score-1{
+    @include font-size(18);
+    font-weight: 700;
+    color: $var-color-0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  &__score-2{
+    padding: fun-rem(4) 0;
+    @include font-size(18);
+    font-weight: 700;
+    color: $var-color-3;
+    letter-spacing: 0.1em;
+  }
+
+  &__score-3{
+    @include font-size(52);
+    font-weight: 700;
+    line-height: 1.14;
+  }
+
+  &__score-4{
+    @include font-size(18);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $var-color-1-l;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &__footer{
+    padding-top: fun-rem(5);
+    display: flex;
+    justify-content: center;
+  }
+
+  &__place{
+    padding-top: fun-rem(2);
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    @include font-size(12);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    border-top: 1px solid $var-color-1-l;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: -120px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: url("../img/playground-bg-2.png") 50% 50%/contain no-repeat scroll;
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  @media (max-width: 991.98px){
+    min-width: 940px;
+  }
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-tournament-playground-2{
+  margin-bottom: fun-rem(30);
+
+  &__team{
+    margin-bottom: fun-rem(20);
+  }
+
+}
+
+.b-tournament-playground-3{
+  margin-bottom: fun-rem(113);
+  position: relative;
+  padding: fun-rem(10) fun-rem(10) 0;
+  //border: 1px solid $var-color-5;
+  //border-radius: fun-rem(3);
+
+  &__header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $var-font-2;
+    margin-bottom: fun-rem(5);
+  }
+
+  &__date{
+    padding-bottom: fun-rem(2);
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include font-size(12);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    border-bottom: 1px solid $var-color-1-l;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &__status{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    padding-right: 30px;
+    font-family: $var-font-2;
+    @include font-size(26);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $var-color-3;
+    text-align: right;
+
+    &::before{
+      position: absolute;
+      content: '';
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: $var-color-3;
+    }
+  }
+
+
+  &__body{
+    margin-bottom: fun-rem(2);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    > div{
+      &:first-child{
+        text-align: right;
+      }
+    }
+  }
+
+  &__team{
+    min-width: 30%;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+  }
+
+  &__team-name{
+    @include font-size(24);
+    font-weight: 700;
+  }
+
+  &__team-city{
+    @include font-size(14);
+    font-weight: 400;
+    color: $var-color-1;
+  }
+
+  &__team-logo{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    padding: 7.5px;
+  }
+
+  &__score{
+    font-family: $var-font-2;
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  &__score-1{
+    @include font-size(18);
+    color: $var-color-1;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  &__score-2{
+    @include font-size(26);
+    font-weight: 700;
+    color: $var-color-3;
+    letter-spacing: 0.1em;
+  }
+
+  &__score-3{
+    @include font-size(90);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  &__score-4{
+    margin-bottom: fun-rem(10);
+    @include font-size(26);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &__score-btn{
+    margin-bottom: fun-rem(10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >.btn{
+      white-space: nowrap;
+      min-width: 201px;
+    }
+
+    >.btn + .btn{
+      margin-left: 20px;
+    }
+
+  }
+
+  &__footer{
+    display: flex;
+    justify-content: center;
+  }
+
+  &__place{
+    padding-top: fun-rem(2);
+    color: $var-color-1-l;
+    display: flex;
+    align-items: center;
+    @include font-size(12);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    border-top: 1px solid $var-color-1-l;
+
+    >span + span{
+      display: inline-block;
+      position: relative;
+      padding-left: 4px;
+      margin-left: 4px;
+
+      &::before{
+        display: inline-block;
+        position: relative;
+        left: -4px;
+        content: '/';
+      }
+
+    }
+
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: -113px;
+    left: 0;
+    right: 0;
+    height: 113px;
+    background: url("../img/playground-3-2-bg.png") 50% 50%/contain no-repeat scroll;
+  }
+
+  //@media (max-width: 1349.98px){}
+  @media (max-width: 1199.98px){
+    &__score-3{
+      @include font-size(62);
+    }
+  }
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-tournament-compare-1{
+
+  &__rows{
+    margin: 0 auto;
+    max-width: 720px;
+  }
+
+  &__row{
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: $var-font-2;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__row + &__row{
+    border-top: 1px solid $var-color-5;
+  }
+
+  &__col{
+
+    span{
+      color: $var-color-3-l;
+    }
+
+    &_1{
+      //flex: 0 0 40%; //41.66667%;
+      //max-width: 40%; //41.66667%;
+      flex: 1;
+      padding-right: 20px;
+      text-align: right;
+      @include font-size(26);
+      color: $var-color-1;
+    }
+
+    &_2{
+      //flex: 0 0 20%;
+      //max-width: 20%;
+      flex: none;
+      min-width: 39%;
+      text-align: center;
+      @include font-size(18);
+    }
+
+    &_3{
+      //flex: 0 0 40%;
+      //max-width: 40%;
+      flex: 1;
+      padding-left: 20px;
+      text-align: left;
+      @include font-size(26);
+      color: $var-color-1;
+    }
+
+  }
+
+}
+
+.b-tournament-compare-2{
+
+  &__rows{
+    margin: 0 auto;
+    max-width: 970px;
+    line-height: 1.23;
+    border-bottom: 1px solid $var-color-5;
+  }
+
+  &__row{
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: $var-font-2;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-top: 1px solid $var-color-5;
+    min-height: 33px;
+  }
+
+  //&__row + &__row{
+  //  border-top: 1px solid $var-color-5;
+  //}
+
+  &__col{
+
+    span{
+      color: $var-color-3;
+    }
+
+    &_1{
+      //flex: 0 0 40%; //41.66667%;
+      //max-width: 40%; //41.66667%;
+      flex: 1;
+      padding-right: 20px;
+      text-align: right;
+      @include font-size(26);
+      color: $var-color-1;
+    }
+
+    &_2{
+      //flex: 0 0 20%;
+      //max-width: 20%;
+      flex: none;
+      min-width: 39%;
+      text-align: center;
+      @include font-size(18);
+    }
+
+    &_3{
+      //flex: 0 0 40%;
+      //max-width: 40%;
+      flex: 1;
+      padding-left: 20px;
+      text-align: left;
+      @include font-size(26);
+      color: $var-color-1;
+    }
+
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  @media (max-width: 767.98px){
+    &__col{
+
+      &_1{
+        @include font-size(20);
+      }
+
+      &_2{
+        @include font-size(16);
+      }
+
+      &_3{
+        @include font-size(20);
+      }
+
+    }
+  }
+  //@media (max-width: 575.98px){}
+
+
+}
+
+.b-tournament-position{
+  position: relative;
+  padding: fun-rem(11) fun-rem(60) fun-rem(11) fun-rem(10);
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  display: flex;
+
+  .b-title-3{
+    margin-bottom: fun-rem(10);
+    color: $var-color-1-l;
+  }
+
+  &__col{
+
+    &_1{
+      margin-right: fun-rem(35);
+    }
+
+    &_2{
+      margin-right: fun-rem(5);
+    }
+
+    //&_3{  }
+
+  }
+
+  &__rating{
+    background-color: #fff;
+    position: relative;
+    padding: 1px;
+    margin-top: -11px;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.2;
+    z-index: 2;
+  }
+
+  &__rating-1{
+    @include font-size(72);
+    font-weight: 700;
+    color: $var-color-3;
+    line-height: 1;
+  }
+
+  &__rating-2{
+    @include font-size(18);
+    font-weight: 700;
+  }
+
+  &__rating-3{
+    background-color: $var-color-1-l;
+    display: block;
+    width: 90px;
+    height: 5px;
+    border-radius: 3px;
+  }
+
+  &__rating-4{
+    margin-bottom: fun-rem(5);
+    @include font-size(12);
+  }
+
+  &__rating-5{
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__team{
+    display: flex;
+    margin-bottom: fun-rem(14.4);
+  }
+
+  &__team-logo{
+    float: none;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__team-main{
+    padding-left: fun-rem(20);
+    flex: auto;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__team-title{
+    @include font-size(34);
+    line-height: 1.2;
+  }
+
+  &__team-desc{
+    @include font-size(16);
+    color: $var-color-4;
+  }
+
+  //&__stat{}
+
+  &__stat-row{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__stat-item{
+    margin-right: fun-rem(20);
+    font-family: $var-font-2;
+    width: 70px;
+    text-align: center;
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+  }
+
+  &__stat-title{
+    margin-bottom: 1.5px;
+    @include font-size(26);
+    font-weight: 700;
+  }
+
+  &__stat-desc{
+    margin-bottom: 1.5px;
+    @include font-size(12);
+    color: $var-color-1-l;
+    text-transform: uppercase;
+  }
+
+  &__success{
+
+    .b-success-card-1{
+      margin-bottom: fun-rem(2);
+      padding: fun-rem(5) 0 fun-rem(10);
+      border: none;
+    }
+
+  }
+
+  //&__coach{}
+
+  &__coach-name{
+    font-family: $var-font-2;
+    @include font-size(20);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__btn{
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+
+    .btn-link{
+      margin: 0;
+      padding: 0;
+      font-family: $var-font-2;
+      @include font-size(12);
+      font-weight: 400;
+      color: $var-color-1-l;
+      text-transform: uppercase;
+      box-shadow: none;
+
+      span{
+        margin: 5px auto 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &:hover{
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+}
+
+.b-tournament-position-2{
+  position: relative;
+  border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+  z-index: 1;
+
+  &__profile{
+    display: none;
+    position: absolute;
+    right: fun-rem(0);
+    bottom: fun-rem(26);
+  }
+
+  &.b-toggle-2__show-2{
+    padding-bottom: 54px;
+    border-color: transparent;
+    border-bottom-color: $var-color-1-l;
+
+    .b-tournament-position-2__profile{
+      display: block;
+    }
+    .b-tournament-position-2__rating-4{
+      display: none;
+    }
+  }
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__cols{
+    position: relative;
+    padding: fun-rem(20) fun-rem(140) fun-rem(20) fun-rem(16);
+    display: flex;
+  }
+
+  &__col{
+    position: relative;
+    min-height: .1px;
+
+    &_1{
+      flex: none;
+      margin-right: fun-rem(20);
+    }
+
+    &_2{
+      flex: auto;
+    }
+
+  }
+
+  &__share{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    flex: none;
+    z-index: 3;
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: .6;
+
+      @include hover-focus{
+        opacity: 1;
+      }
+
+    }
+
+  }
+
+  &__rating{
+    position: absolute;
+    top: fun-rem(20);
+    right: fun-rem(30);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.2;
+    z-index: 2;
+  }
+
+  &__rating-1{
+    @include font-size(72);
+    font-weight: 700;
+    color: $var-color-3;
+    line-height: 1;
+  }
+
+  &__rating-2{
+    @include font-size(14);
+    font-weight: 400;
+  }
+
+  &__rating-3{
+    background-color: $var-color-3;
+    display: block;
+    width: 60px;
+    height: 5px;
+    border-radius: 3px;
+    margin: 0 auto fun-rem(2);
+  }
+
+  &__rating-4{
+    margin-bottom: fun-rem(5);
+    @include font-size(12);
+    font-weight: 400;
+  }
+
+  &__img{
+    width: 160px;
+    height: 165px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+  }
+
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: fun-rem(16);
+    font-family: $var-font-2;
+  }
+
+  &__team-1{
+    @include font-size(16);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  &__team-2{
+    @include font-size(34);
+    line-height: 1.1;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__team-3{
+    @include font-size(16);
+    color: $var-color-1-l;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  //&__stat{}
+
+  &__stat-row{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__stat-item{
+    margin-right: fun-rem(8);
+    width: 74px;
+    //height: 64px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+  }
+
+  &__stat-title{
+    margin-bottom: 3px;
+    @include font-size(24);
+    font-weight: 700;
+  }
+
+  &__stat-desc{
+    margin-bottom: 8px;
+    font-family: $var-font-2;
+    @include font-size(10);
+  }
+
+  &__success{
+
+    .b-success-card-1{
+      margin-bottom: fun-rem(2);
+      padding: fun-rem(5) 0 fun-rem(10);
+      border: none;
+    }
+
+  }
+
+  //&__coach{}
+
+  &__coach-name{
+    font-family: $var-font-2;
+    @include font-size(20);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__btn{
+    position: absolute;
+    bottom: 15px;
+    right: 16px;
+    z-index: 3;
+
+    .btn-link{
+      background-color: #fff;
+      position: relative;
+      margin: 0;
+      padding: 7px;
+      color: $var-color-1;
+      box-shadow: none;
+      border: 2px solid $var-color-1;;
+      border-radius: fun-rem(3);
+      width: 44px;
+      height: 44px;
+      line-height: 1;
+
+      span{
+        position: absolute;
+        display: block;
+        left: 7px;
+        right: 7px;
+        top: 7px;
+        bottom: 7px;
+        //transform: rotate(45deg);
+
+        &::before {
+          position: absolute;
+          content: '';
+          top: 50%;
+          left: 0;
+          right: 0;
+          transform: translateY(-50%);
+          width: 100%;
+          height: 4px;
+          background: $var-color-1;
+        }
+
+        &::after {
+          position: absolute;
+          content: '';
+          left: 50%;
+          top: 0;
+          right: 0;
+          transform: translateX(-50%);
+          height: 100%;
+          width: 4px;
+          background: $var-color-1;
+        }
+
+      }
+
+      &:hover{
+        opacity: .95;
+      }
+
+    }
+
+  }
+
+  @media (max-width: 1349.98px){
+    &__img{
+      width: 70px;
+      height: 75px;
+    }
+  }
+  @media (max-width: 1199.98px){
+    &__img{
+      width: 60px;
+      height: 65px;
+    }
+  }
+  @media (max-width: 991.98px){
+    &__img{
+      width: 50px;
+      height: 55px;
+    }
+  }
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-tournament-position-3{
+  position: relative;
+  padding: fun-rem(15) fun-rem(36) fun-rem(15) fun-rem(20);
+  border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__cols{
+    position: relative;
+    display: flex;
+    margin-bottom: fun-rem(13);
+  }
+
+  &__col{
+    position: relative;
+    min-height: .1px;
+
+    &_1{
+      flex: none;
+      margin-right: fun-rem(10);
+    }
+
+    &_2{
+      flex: auto;
+    }
+
+  }
+
+  &__share{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    flex: none;
+    z-index: 3;
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: .6;
+
+      @include hover-focus{
+        opacity: 1;
+      }
+
+    }
+
+  }
+
+  &__img{
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: fun-rem(5);
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+  }
+
+  &__team-main{
+    font-family: $var-font-2;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__team-1{
+    @include font-size(16);
+    color: $var-color-1-l;
+    line-height: 1.2;
+  }
+
+  &__team-2{
+    @include font-size(34);
+    line-height: 1.1;
+  }
+
+  &__team-3{
+    margin-bottom: fun-rem(4);
+    @include font-size(16);
+    color: $var-color-1-l;
+    line-height: 1.2;
+  }
+
+  &__team-4{
+    @include font-size(16);
+    line-height: 1.2;
+  }
+
+  &__team-dv{
+    margin: 0 0 fun-rem(3);
+    background-color: $var-color-2;
+    display: block;
+    width: 60px;
+    height: 4px;
+    border-radius: 3px;
+  }
+
+  //&__stat{}
+
+  &__stat-row{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__stat-item{
+    margin-right: fun-rem(9);
+    width: 74px;
+    //height: 64px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+  }
+
+  &__stat-title{
+    margin-bottom: 3px;
+    @include font-size(24);
+    font-weight: 700;
+  }
+
+  &__stat-desc{
+    margin-bottom: 8px;
+    font-family: $var-font-2;
+    @include font-size(10);
+  }
+
+  &__success{
+
+    .b-success-card-1{
+      margin-bottom: fun-rem(2);
+      padding: fun-rem(5) 0 fun-rem(10);
+      border: none;
+    }
+
+  }
+
+  //&__coach{}
+
+  &__coach-name{
+    font-family: $var-font-2;
+    @include font-size(20);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__btn{
+    position: absolute;
+    bottom: 15px;
+    right: 16px;
+    z-index: 3;
+
+    .btn-link{
+      position: relative;
+      margin: 0;
+      padding: 7px;
+      color: $var-color-1;
+      box-shadow: none;
+      border: 2px solid $var-color-1;;
+      border-radius: fun-rem(3);
+      width: 44px;
+      height: 44px;
+      line-height: 1;
+
+      span{
+        position: absolute;
+        display: block;
+        left: 7px;
+        right: 7px;
+        top: 7px;
+        bottom: 7px;
+        //transform: rotate(45deg);
+
+        &::before {
+          position: absolute;
+          content: '';
+          top: 50%;
+          left: 0;
+          right: 0;
+          transform: translateY(-50%);
+          width: 100%;
+          height: 4px;
+          background: $var-color-1;
+        }
+
+        &::after {
+          position: absolute;
+          content: '';
+          left: 50%;
+          top: 0;
+          right: 0;
+          transform: translateX(-50%);
+          height: 100%;
+          width: 4px;
+          background: $var-color-1;
+        }
+
+      }
+
+      &:hover{
+        opacity: .95;
+      }
+
+    }
+
+  }
+
+}
+
+.b-tournament-position-4{
+  position: relative;
+  //border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+  z-index: 1;
+
+  &__profile{
+    position: absolute;
+    right: fun-rem(0);
+    bottom: fun-rem(26);
+  }
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__cols{
+    position: relative;
+    padding: fun-rem(20) fun-rem(140) fun-rem(20) fun-rem(16);
+    display: flex;
+  }
+
+  &__col{
+    position: relative;
+    min-height: .1px;
+
+    &_1{
+      flex: none;
+      margin-right: fun-rem(20);
+    }
+
+    &_2{
+      flex: auto;
+    }
+
+  }
+
+  &__share{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    flex: none;
+    z-index: 3;
+
+    >a{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: .96;
+
+      @include hover-focus{
+        opacity: 1;
+      }
+
+    }
+
+  }
+
+  &__img{
+    width: 160px;
+    height: 165px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+  }
+
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: fun-rem(16);
+    font-family: $var-font-2;
+  }
+
+  &__team-1{
+    @include font-size(16);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  &__team-2{
+    @include font-size(34);
+    line-height: 1.1;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__team-3{
+    @include font-size(16);
+    color: $var-color-1-l;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  //&__stat{}
+
+  &__stat-row{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__stat-item{
+    margin-right: fun-rem(8);
+    width: 74px;
+    //height: 64px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+  }
+
+  &__stat-title{
+    margin-bottom: 3px;
+    @include font-size(24);
+    font-weight: 700;
+  }
+
+  &__stat-desc{
+    margin-bottom: 8px;
+    font-family: $var-font-2;
+    @include font-size(10);
+  }
+
+  &__success{
+
+    .b-success-card-1{
+      margin-bottom: fun-rem(2);
+      padding: fun-rem(5) 0 fun-rem(10);
+      border: none;
+    }
+
+  }
+
+  //&__coach{}
+
+  &__coach-name{
+    font-family: $var-font-2;
+    @include font-size(20);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__btn{
+    position: absolute;
+    bottom: 15px;
+    right: 16px;
+    z-index: 3;
+
+    .btn-link{
+      position: relative;
+      margin: 0;
+      padding: 7px;
+      color: $var-color-1;
+      box-shadow: none;
+      border: 2px solid $var-color-1;;
+      border-radius: fun-rem(3);
+      width: 44px;
+      height: 44px;
+      line-height: 1;
+
+      span{
+        position: absolute;
+        display: block;
+        left: 7px;
+        right: 7px;
+        top: 7px;
+        bottom: 7px;
+        //transform: rotate(45deg);
+
+        &::before {
+          position: absolute;
+          content: '';
+          top: 50%;
+          left: 0;
+          right: 0;
+          transform: translateY(-50%);
+          width: 100%;
+          height: 4px;
+          background: $var-color-1;
+        }
+
+        &::after {
+          position: absolute;
+          content: '';
+          left: 50%;
+          top: 0;
+          right: 0;
+          transform: translateX(-50%);
+          height: 100%;
+          width: 4px;
+          background: $var-color-1;
+        }
+
+      }
+
+      &:hover{
+        opacity: .95;
+      }
+
+    }
+
+  }
+
+}
+
+.b-tournament-rating{
+  display: flex;
+
+  &__card{
+    margin-bottom: 10px;
+  }
+
+  &__col{
+
+    &_1{
+      flex: none;
+      min-width: 200px;
+    }
+
+    &_2{
+      flex: auto;
+      padding: 0 fun-rem(10);
+    }
+
+    &_3{
+      flex: none;
+      max-width: 136px;
+      height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+  }
+
+  &__cols-2{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__col-2{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+
+    .b-success-card-1{
+      height: 100%;
+    }
+
+    &_1{
+      flex: 0 0 33%;
+      max-width: 33%;
+      padding-right: 10px;
+
+      .b-team-card-6 + .b-team-card-6{
+        margin-top: 10px;
+      }
+
+    }
+
+    &_2{
+      flex: 0 0 27%;
+      max-width: 27%;
+      padding-right: 10px;
+    }
+
+    &_3{
+      flex: 0 0 40%;
+      max-width: 40%;
+    }
+
+  }
+
+  &__col-3{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+
+    .b-success-card-1{
+      height: 100%;
+
+      .b-title-3{
+        margin-right: -9px;
+      }
+    }
+
+    &_1{
+      flex: 0 0 33%;
+      max-width: 33%;
+      padding-right: 10px;
+
+      .b-team-card-6 + .b-team-card-6{
+        margin-top: 10px;
+      }
+
+    }
+
+    &_2{
+      flex: 0 0 22.5%;
+      max-width: 22.5%;
+      padding-right: 10px;
+    }
+
+    &_3{
+      flex: 0 0 44.5%;
+      max-width: 44.5%;
+    }
+
+  }
+
+  &__num{
+    padding: fun-rem(20) fun-rem(10) fun-rem(10);
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-align: center;
+    min-height: 195px;
+  }
+
+  &__num-1{
+    @include font-size(18);
+    font-weight: 700;
+  }
+
+  &__num-2{
+    @include font-size(72);
+    color: $var-color-3;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__num-3{
+    background-color: $var-color-1-l;
+    display: block;
+    margin: 0 auto fun-rem(3);
+    max-width: 100px;
+    height: 5px;
+    border-radius: 3px;
+  }
+
+  &__num-4{
+    margin-bottom: fun-rem(5);
+    @include font-size(12);
+  }
+
+  &__num-5{
+    @include font-size(34);
+    color: $var-color-3;
+    font-weight: 700;
+  }
+
+  &__btn{
+    .btn-block{
+      padding-left: fun-rem(10);
+      padding-right: fun-rem(10);
+    }
+  }
+
+}
+
+.b-tournament-rating-2{
+  position: relative;
+  display: flex;
+  z-index: 1;
+
+  &::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid $var-color-5;
+    border-radius: 3px;
+    z-index: 0;
+  }
+
+  &__card{
+    margin-bottom: fun-rem(18);
+
+    .b-title-3{
+      margin-bottom: fun-rem(5);
+    }
+  }
+
+  &__col{
+
+    &_1{
+      flex: none;
+      min-width: 200px;
+    }
+
+    &_2{
+      flex: auto;
+      padding: fun-rem(20) fun-rem(10) fun-rem(10);
+    }
+
+    &_3{
+      padding: fun-rem(10) fun-rem(20) fun-rem(10) fun-rem(0);
+      flex: none;
+      width: 170px;
+      min-height: 370px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+  }
+
+  &__cols-2{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__col-2{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+
+    .b-success-card-1{
+      height: 100%;
+    }
+
+    &_1{
+      flex: 0 0 23.5%;
+      max-width: 23.5%; //27%;
+      padding-right: 10px;
+
+      .b-team-card-6 + .b-team-card-6{
+        margin-top: 10px;
+      }
+
+    }
+
+    &_2{
+      flex: 0 0 36.5%; //33%;
+      max-width: 36.5%;
+      padding-right: 10px;
+    }
+
+    &_3{
+      flex: 0 0 40%;
+      max-width: 40%;
+    }
+
+  }
+
+  &__col-3{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+
+    .b-success-card-1{
+      height: 100%;
+
+      .b-title-3{
+        margin-right: -9px;
+      }
+    }
+
+    &_1{
+      flex: 0 0 33%;
+      max-width: 33%;
+      padding-right: 10px;
+
+      .b-team-card-6 + .b-team-card-6{
+        margin-top: 10px;
+      }
+
+    }
+
+    &_2{
+      flex: 0 0 22.5%;
+      max-width: 22.5%;
+      padding-right: 10px;
+    }
+
+    &_3{
+      flex: 0 0 44.5%;
+      max-width: 44.5%;
+    }
+
+  }
+
+  //&__stat{}
+
+  &__stat-row{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__stat-item{
+    margin-right: fun-rem(9);
+    width: 74px;
+    //height: 64px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+  }
+
+  &__stat-title{
+    margin-bottom: 3px;
+    @include font-size(24);
+    font-weight: 700;
+  }
+
+  &__stat-desc{
+    margin-bottom: 8px;
+    font-family: $var-font-2;
+    @include font-size(10);
+  }
+
+  //__success
+
+  &__success{
+    border: 1px solid $var-color-5;
+    border-radius: 3px;
+    padding: 10px 1px 9px 9px;
+    min-height: 230px;
+
+    .b-title-3{
+      margin-bottom: fun-rem(15);
+    }
+  }
+
+  &__success-row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__success-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: fun-rem(15);
+    margin-bottom: fun-rem(15);
+  }
+
+  &__success-item2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-right: fun-rem(10);
+    margin-bottom: fun-rem(5);
+  }
+
+  &__team{
+    border: 1px solid $var-color-5;
+    border-radius: 3px;
+    padding: 10px 1px 9px 9px;
+    min-height: 110px;
+
+    .b-title-3{
+      margin-bottom: fun-rem(15);
+    }
+
+  }
+
+  &__team-row{
+    display: flex;
+  }
+
+  &__team-main{
+    padding-left: fun-rem(20);
+  }
+
+  &__team-name{
+    margin-bottom: 1px;
+    font-family: $var-font-2;
+    @include font-size(16);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $var-color-1;
+  }
+
+  &__team-city{
+    margin-bottom: 0;
+    font-family: $var-font-2;
+    @include font-size(12);
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $var-color-1-l;
+  }
+
+  &__team-img{
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+  }
+
+
+
+
+  &__num{
+    padding: fun-rem(20) fun-rem(10) fun-rem(10);
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-align: center;
+    min-height: 195px;
+  }
+
+  &__num-1{
+    @include font-size(18);
+    font-weight: 700;
+  }
+
+  &__num-2{
+    @include font-size(72);
+    color: $var-color-3;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__num-3{
+    background-color: $var-color-1-l;
+    display: block;
+    margin: 0 auto fun-rem(3);
+    max-width: 100px;
+    height: 5px;
+    border-radius: 3px;
+  }
+
+  &__num-4{
+    margin-bottom: fun-rem(5);
+    @include font-size(12);
+  }
+
+  &__num-5{
+    @include font-size(34);
+    color: $var-color-3;
+    font-weight: 700;
+  }
+
+  &__btn{
+    .btn-block{
+      padding-left: fun-rem(10);
+      padding-right: fun-rem(10);
+    }
+  }
+
+}
+
+.b-tournament-photo {
+  margin-bottom: fun-rem(20);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 235px);
+  //grid-column-gap: 10px;
+  //grid-row-gap: 10px;
+  grid-gap: 10px 10px;
+  max-width: 977.5px;
+
+  &__1 { grid-area: 1 / 1 / 2 / 2; }
+  &__2 { grid-area: 1 / 2 / 2 / 3; }
+  &__3 { grid-area: 2 / 1 / 3 / 2; }
+  &__4 { grid-area: 2 / 2 / 3 / 3; }
+  &__5 { grid-area: 1 / 3 / 3 / 5; }
+  &__6 { grid-area: 3 / 1 / 4 / 3; }
+  &__7 { grid-area: 3 / 3 / 4 / 4; }
+  &__8 { grid-area: 4 / 1 / 5 / 2; }
+  &__9 { grid-area: 4 / 2 / 5 / 3; }
+  &__10 { grid-area: 4 / 3 / 5 / 4; }
+  &__11 { grid-area: 3 / 4 / 5 / 5; }
+  &__12 { grid-area: 5 / 1 / 6 / 2; }
+  &__13 { grid-area: 5 / 2 / 6 / 3; }
+  &__14 { grid-area: 5 / 3 / 6 / 4; }
+  &__15 { grid-area: 5 / 4 / 6 / 5; }
+
+}
+
+.b-accordion{
+
+  &__item{
+    margin-bottom: fun-rem(10);
+  }
+
+  &__header{
+    margin-bottom: 0;
+  }
+
+  &__title{
+    margin: 0;
+    padding: 0;
+  }
+
+  &__btn{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: fun-rem(28) fun-rem(10);
+    text-align: left;
+    border: 1px solid $var-color-5;
+    border-radius: 0;
+    box-shadow: none;
+
+    @include hover-focus{
+      box-shadow: none;
+    }
+
+    @include hover{
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.24);
+    }
+  }
+
+  &__btn-wrap{
+    flex: auto;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+
+    &::before{
+      position: absolute;
+      content: '';
+      background-color: $var-color-2;
+      width: 20px;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      border-radius: fun-rem(2);
+    }
+  }
+
+  &__btn-img{
+    flex: none;
+    display: flex;
+    align-items: center;
+    padding-right: fun-rem(200);
+  }
+
+  &__img{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+  }
+
+  &__img + &__img{
+    margin-left: fun-rem(10);
+  }
+
+  &__btn-1{
+    display: block;
+    //margin-bottom: fun-rem(30);
+    font-family: $var-font-2;
+    @include font-size(34);
+    font-weight: 700;
+    color: $var-color-1;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  &__btn-2{
+    display: block;
+    //margin-bottom: fun-rem(30);
+    font-family: $var-font-2;
+    @include font-size(18);
+    font-weight: 700;
+    color: $var-color-1-l;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  &__body{
+    padding: fun-rem(40) fun-rem(0) fun-rem(20);
+  }
+
+  &__card{
+    margin-bottom: fun-rem(10);
+  }
+
+  &__btn-toggle{
+    position: absolute;
+    width: 72px;
+    height: 62px;
+    right: 10px;
+    top: 50%;
+    margin-top: -31px;
+    padding: 0;
+    box-shadow: none;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+    background: url("../img/svg/tour-close.svg") 50% 50% no-repeat scroll;
+  }
+
+  .collapsed{
+    .b-accordion__btn-toggle{
+      background: url("../img/svg/tour-open.svg") 50% 50% no-repeat scroll;
+    }
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  @media (max-width: 991.98px){
+    &__btn-img{
+      padding-right: fun-rem(80);
+    }
+    &__btn-1{
+      @include font-size(28);
+    }
+    &__btn-2{
+      @include font-size(14);
+    }
+    &__body{
+      padding: fun-rem(20) fun-rem(0) fun-rem(20);
+    }
+  }
+  @media (max-width: 767.98px){
+    &__btn-1{
+      @include font-size(20);
+    }
+    &__btn-2{
+      @include font-size(11);
+    }
+    &__btn-img{
+      display: none;
+    }
+    &__btn-toggle{
+      width: 50px;
+      height: 50px;
+      right: 10px;
+      top: 50%;
+      margin-top: -25px;
+    }
+    &__btn{
+      padding: fun-rem(24) fun-rem(70) fun-rem(24) fun-rem(10);
+    }
+  }
+  //@media (max-width: 575.98px){}
+
+}
+
+
+// layout
+//=============================================
+.b-tournament-page{
+
+  //&__main{}
+
+  &__aside{
+    margin-bottom: fun-rem(20);
+  }
+
+  &__grid{
+    margin-bottom: fun-rem(30);
+  }
+
+  &__leader-grid{
+    margin-bottom: fun-rem(40);
+  }
+
+  &__match-court{
+    margin-bottom: fun-rem(40);
+  }
+
+  &__match-leader{
+    margin-bottom: fun-rem(30);
+  }
+
+  &__match-court-2{
+    padding-bottom: fun-rem(10);
+    margin-bottom: fun-rem(20);
+    border-bottom: 1px solid $var-color-5;
+  }
+
+  &__match-leader-2{
+    margin-bottom: fun-rem(30);
+  }
+
+  &__banner{
+    margin-bottom: fun-rem(20);
+  }
+
+  // 14
+  &__schedule-title-box{
+    margin-bottom: fun-rem(30);
+
+    .b-form-select-2{
+      flex: none;
+      width: 480px;
+      min-width: 480px;
+    }
+
+  }
+
+  //11
+  //&__standings{}
+
+  //19
+  //&__player-coach{}
+
+  //21
+  //&__rating{}
+
+  //22
+  //&__records{}
+
+}
+
+.b-tournament-grid{
+
+  .row {
+    > .col,
+    > [class*="col-"] {
+      padding-bottom: 20px;
+    }
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  @media (max-width: 991.98px){
+    .row {
+      flex-wrap: nowrap;
+
+      .b-tournament-card-1{
+        min-width: 312px;
+      }
+    }
+  }
+  @media (max-width: 767.98px){
+    .row {
+      flex-wrap: nowrap;
+
+      .b-tournament-card-1{
+        min-width: 312px;
+      }
+    }
+  }
+  @media (max-width: 575.98px){
+    .b-tournament-card-1{
+      min-width: 302px;
+    }
+  }
+
+}
+
+.b-tournament-grid-2{
+
+  .row {
+    > .col,
+    > [class*="col-"] {
+      flex: 0;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__item-200{
+    min-width: 200px;
+  }
+
+}
+
+.b-tournament-leader-grid{
+
+  &__item{
+    margin-bottom: 10px;
+  }
+
+}
+
+.b-tournament-leader-grid-2{
+  margin-bottom: fun-rem(20);
+
+  .row {
+    margin-right: -5px;
+    margin-left: -5px;
+    > .col,
+    > [class*="col-"] {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+  }
+
+  &__item{
+    margin-bottom: 10px;
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  @media (max-width: 991.98px){
+    &__item{
+      min-width: 370px;
+      margin-right: fun-rem(10);
+    }
+  }
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-tournament-list{
+  margin-bottom: 20px;
+
+  &__item{
+    padding-bottom: 10px;
+
+    &:last-child{
+      padding-bottom: 0;
+    }
+
+  }
+
+  //@media (max-width: 1349.98px){}
+  @media (max-width: 1199.98px){
+    &_flex{
+      display: flex;
+
+      .b-tournament-list__item{
+        min-width: 310px;
+        margin-right: fun-rem(10);
+      }
+    }
+  }
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-tournament-team-list {
+  margin-bottom: fun-rem(20);
+
+  .b-team-card-3{
+    margin-bottom: fun-rem(10);
+  }
+
+  .b-team-card-9-3{
+    margin-bottom: fun-rem(14);
+  }
+
+  //@media (max-width: 1349.98px){}
+  @media (max-width: 1199.98px){
+    display: flex;
+
+    .b-team-card-9-3{
+      min-width: 250px;
+      margin-right: fun-rem(10);
+      margin-bottom: fun-rem(0);
+    }
+  }
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-tournament-court-box{
+  background: url("../img/svg/tournament-court-bg.svg") 50% 50%/contain no-repeat scroll;
+  display: flex;
+  justify-content: space-between;
+
+  &__col{
+    flex: none;
+  }
+
+  &__item{
+    margin-bottom: 10px;
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  @media (max-width: 991.98px){
+    //min-width: 940px;
+    .b-player-card-14{
+      min-width: 420px;
+    }
+    .b-tournament-court-box-2__item{
+      margin-right: 10px;
+    }
+  }
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-tournament-leader-box{
+  background: url("../img/svg/tournament-leader-bg.svg") 50% 50% no-repeat scroll;
+  display: flex;
+  justify-content: space-between;
+
+  &__col{
+    flex: none;
+  }
+
+  &__item{
+    margin-bottom: 10px;
+  }
+
+}
+
+.b-tournament-court-box-2{
+  display: flex;
+  justify-content: space-between;
+
+  &__col{
+    flex: none;
+  }
+
+  &__item{
+    margin-bottom: 10px;
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  @media (max-width: 991.98px){
+    //min-width: 940px;
+    .b-player-card-14{
+      min-width: 420px;
+    }
+    &__item{
+      margin-right: 10px;
+    }
+  }
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-tournament-leader-box-2{
+  display: flex;
+  justify-content: space-between;
+
+  &__col{
+    flex: none;
+  }
+
+  &__item{
+    margin-bottom: 10px;
+  }
+
+}
+
+.b-tournament-calendar-mini-box{
+  margin-bottom: 20px;
+}
+
+.b-tournament-player-box{
+
+  &__player{
+    margin-bottom: fun-rem(10);
+  }
+
+  &__banner{
+    margin-bottom: fun-rem(10);
+
+    .b-banner-1-{
+      max-width: 312px;
+      height: 360px;
+    }
+
+  }
+
+}
+
+.b-tournament-nav-box{
+  margin-bottom: fun-rem(50);
+  display: flex;
+  justify-content: center;
+}
+
+.b-tournament-game-box{
+  margin-bottom: fun-rem(20);
+
+  &__team{
+    margin-bottom: fun-rem(2);
+  }
+
+  &__nav{
+    display: block;
+    margin: 0 auto fun-rem(24);
+    max-width: 680px;
+  }
+
+  &__row{
+    margin-bottom: fun-rem(10);
+
+    .row {
+      margin-right: -5px;
+      margin-left: -5px;
+      > .col,
+      > [class*="col-"] {
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+    }
+
+  }
+
+  &__btn{
+    margin-bottom: fun-rem(20);
+    padding-top: fun-rem(10);
+    text-align: center;
+  }
+
+  //&__nav{}
+
+}
+
+.b-tournament-game-box-2{
+  margin: 0 auto fun-rem(20);
+  max-width: 970px;
+
+  &__nav{
+    display: block;
+    margin: 0 auto fun-rem(20);
+    //max-width: 680px;
+  }
+
+  &__row{
+    margin-bottom: fun-rem(10);
+
+    .row {
+      margin-right: -5px;
+      margin-left: -5px;
+      > .col,
+      > [class*="col-"] {
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+    }
+
+  }
+
+  &__btn{
+    margin-bottom: fun-rem(20);
+    padding-top: fun-rem(10);
+    text-align: center;
+  }
+
+  //&__nav{}
+
+}
+
+.b-tournament-compare-box{
+  margin-bottom: fun-rem(30);
+
+  &__team{
+    background: url("../img/svg/compare-bg-1.svg") 50% 50%/contain no-repeat scroll;
+    margin-bottom: fun-rem(20);
+  }
+
+  &__team-2{
+    background: url("../img/svg/compare-bg-1-2.svg") 50% 50%/contain no-repeat scroll;
+    margin-bottom: fun-rem(20);
+  }
+
+  &__compare{
+    margin-bottom: fun-rem(10);
+  }
+
+  &__coach{
+    background: url("../img/svg/compare-bg-2.svg") 50% 50%/contain no-repeat scroll;
+  }
+
+}
+
+.b-tournament-compare-box-2{
+  margin-bottom: fun-rem(30);
+
+  &__team{
+    background: url("../img/svg/compare-bg-3.svg") 50% 50% no-repeat scroll;
+    margin-bottom: fun-rem(20);
+  }
+
+  &__compare{
+    margin-bottom: fun-rem(20);
+  }
+
+  &__coach{
+    background: url("../img/svg/compare-bg-2-2.svg") 50% 50% no-repeat scroll;
+    margin: 0 auto;
+    max-width: 970px;
+  }
+
+}
+
+.b-tournament-standings-box{
+  margin-bottom: fun-rem(30);
+
+  &__item{
+    padding-bottom: fun-rem(20);
+    margin-bottom: fun-rem(20);
+    border-bottom: 1px solid $var-color-1-l;
+
+    &:last-child{
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .b-title-3{
+      margin-bottom: fun-rem(10);
+    }
+
+  }
+
+  &__table{
+
+    .b-table-4{
+      margin-bottom: fun-rem(10);
+    }
+
+  }
+
+  &__card{
+
+  }
+
+}
+
+.b-tournament-nomination-box{
+  margin-bottom: fun-rem(36);
+
+  &__row{
+    position: relative;
+    margin-right: -20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item{
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+
+}
+
+.b-tournament-position-box{
+  margin-bottom: fun-rem(30);
+
+  &__item{
+    margin-bottom: fun-rem(20);
+  }
+
+}
+
+.b-tournament-stats-leader-box{
+  margin-bottom: fun-rem(50);
+
+  &__nav{
+    margin-bottom: fun-rem(20);
+  }
+
+  //&__slider{}
+
+}
+
+.b-tournament-stats-sort-box{
+  margin-bottom: fun-rem(50);
+
+  .b-title-box-4{
+    margin-bottom: fun-rem(30);
+  }
+
+  &__select{
+    margin-bottom: fun-rem(30);
+
+    //.row {
+    //  > .col,
+    //  > [class*="col-"] {
+    //    .b-form-select__group{}
+    //  }
+    //}
+
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  @media (max-width: 991.98px){
+    margin-bottom: fun-rem(40);
+  }
+  @media (max-width: 767.98px){
+
+    margin-bottom: fun-rem(30);
+    &__select{
+      margin-bottom: fun-rem(20);
+    }
+  }
+  @media (max-width: 575.98px){
+    margin-bottom: fun-rem(20);
+
+    &__select{
+      margin-bottom: fun-rem(20);
+    }
+  }
+}
+
+.b-tournament-stats-compare-box{
+  background: url("../img/svg/stats-compare-bg.svg") 50% 45px no-repeat scroll;
+  position: relative;
+  margin-bottom: fun-rem(30);
+
+  .b-tournament-compare-box__team{
+    margin-bottom: fun-rem(10);
+  }
+
+  &__select{
+    padding-top: fun-rem(10);
+
+    .b-form-select__group{
+      margin-bottom: fun-rem(30);
+    }
+
+  }
+
+  &__select-row{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__select-1{
+    flex: none;
+    min-width: 370px;
+  }
+
+  &__select-2{
+    flex: auto;
+  }
+
+  &__select-3{
+    flex: none;
+    min-width: 370px;
+  }
+
+  //&__compare{}
+
+  &__player-1, &__player-2{
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__player-1{
+    left: 0;
+  }
+
+  &__player-2{
+    right: 0;
+  }
+
+  &__coach{
+    background: url("../img/svg/compare-bg-2.svg") 50% 50%/contain no-repeat scroll;
+  }
+
+  &__wrap{
+    display: block;
+    margin: 0 auto;
+    max-width: 970px;
+  }
+
+  &_2{
+    background: none;
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  @media (max-width: 991.98px){
+    &__select-1{
+      flex: none;
+      min-width: 300px;
+    }
+
+    &__select-2{
+      flex: auto;
+    }
+
+    &__select-3{
+      flex: none;
+      min-width: 300px;
+    }
+  }
+  @media (max-width: 767.98px){
+    &__select-row{
+      display: flex;
+      flex-direction: column;
+      //justify-content: space-between;
+    }
+  }
+  //@media (max-width: 575.98px){}
+
+
+}
+
+.b-tournament-team-card-box{
+  margin-bottom: fun-rem(20);
+}
+
+.b-tournament-teams-box{
+  margin-bottom: fun-rem(30);
+
+  &__slider{
+    margin-bottom: fun-rem(20);
+  }
+
+  &__btn{
+    margin-bottom: fun-rem(20);
+    text-align: right;
+  }
+
+  &__players{
+
+    .row {
+      > .col,
+      > [class*="col-"] {
+        padding-bottom: 30px;
+      }
+    }
+
+  }
+
+  @media (max-width: 991.98px){
+    &__players{
+
+      .row {
+        > .col,
+        > [class*="col-"] {
+          padding-bottom: 10px;
+        }
+      }
+
+    }
+
+    &__992{
+      margin-bottom: 20px;
+
+      .row {
+        flex-wrap: nowrap;
+      }
+
+      .b-tournament-card-1{
+        min-width: 310px;
+      }
+    }
+  }
+
+}
+
+.b-tournament-teams-leader-box{
+  margin-bottom: fun-rem(30);
+
+  &__item{
+    margin-bottom: fun-rem(20);
+    border-top: 1px solid $var-color-5;
+    border-bottom: 1px solid $var-color-5;
+  }
+
+  &__player{
+
+    .row {
+      > .col,
+      > [class*="col-"] {
+        padding-bottom: 10px;
+      }
+    }
+
+  }
+
+  &__team{
+
+  }
+
+}
+
+.b-tournament-player-coach-box{
+  margin-bottom: fun-rem(10);
+
+  &__alphabet{
+    margin-bottom: fun-rem(33);
+  }
+
+  &__select{
+    padding-bottom: fun-rem(20);
+
+    >.b-form-select-2{
+      margin-right: auto;
+      max-width: 230px;
+    }
+
+  }
+
+}
+
+.b-tournament-rating-box{
+  margin-bottom: fun-rem(30);
+
+  &__item{
+    padding-bottom: fun-rem(15);
+    margin-bottom: fun-rem(20);
+    border-bottom: 1px solid $var-color-5;
+  }
+
+  &__item-2{
+    margin-bottom: fun-rem(20);
+  }
+
+  &__more{
+    text-align: center;
+  }
+
+}
+
+.b-tournament-records-box{
+  margin-bottom: fun-rem(40);
+
+  .b-title-box-4{
+    margin-bottom: fun-rem(30);
+  }
+
+  &__select{
+    margin-bottom: fun-rem(30);
+
+    //.row {
+    //  > .col,
+    //  > [class*="col-"] {
+    //    .b-form-select__group{}
+    //  }
+    //}
+
+  }
+
+}
+
+.b-tournament-history-box{
+  margin-bottom: fun-rem(30);
+
+  .b-title-2{
+    margin-bottom: fun-rem(20);
+  }
+
+  &__item{
+    margin-bottom: fun-rem(20);
+  }
+
+}
+
+.b-tournament-history-box-2{
+  margin-bottom: fun-rem(30);
+
+  .b-title-2{
+    margin-bottom: fun-rem(20);
+  }
+
+  .b-tournament-nomination-box{
+    margin-bottom: fun-rem(20);
+  }
+
+  .b-tournament-stats-leader-box{
+    margin-bottom: 0;
+  }
+
+  &__slider{
+    margin-bottom: fun-rem(40);
+  }
+
+  &__item{
+    padding-bottom: fun-rem(40);
+    margin-bottom: fun-rem(40);
+    border-bottom: 5px solid $var-color-5;
+
+    &:last-child{
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+  }
+
+  &__item-2{
+    padding-bottom: fun-rem(20);
+    margin-bottom: fun-rem(20);
+
+    &:last-child{
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
+.b-tournament-slider-box{
+  margin-bottom: fun-rem(40);
+}
+
+.b-tournament-standings{
+  margin-bottom: fun-rem(30);
+
+  .row{
+
+    >.col-3{
+
+      &:first-child{
+        .b-tournament-card-4 + .b-tournament-card-4{
+          margin-top: 40px;
+        }
+        >.b-tournament-card-4:first-child{
+          margin-top: 0;
+        }
+      }
+
+      &:nth-child(2){
+        .b-tournament-card-4 + .b-tournament-card-4{
+          margin-top: 240px;
+        }
+        >.b-tournament-card-4:first-child{
+          margin-top: 100px;
+        }
+
+        .b-tournament-card-4{
+
+          &::before{
+            position: absolute;
+            content: '';
+            top: -21px;
+            left: -21px;
+            width: 40px;
+            height: 20px;
+            background: url("../img/svg/standings-line-1.svg") 100% 0 no-repeat scroll;
+            z-index: 1;
+          }
+
+          &::after{
+            position: absolute;
+            content: '';
+            bottom: -21px;
+            left: -21px;
+            width: 40px;
+            height: 20px;
+            background: url("../img/svg/standings-line-1.svg") 100% 100% no-repeat scroll;
+            z-index: 1;
+          }
+
+        }
+
+      }
+
+      &:nth-child(3){
+        background: url("../img/svg/standings-bg-1.svg") 50% 50% no-repeat scroll;
+
+        .b-tournament-card-4 + .b-tournament-card-4{
+          margin-top: 640px;
+        }
+        >.b-tournament-card-4:first-child{
+          margin-top: 300px;
+        }
+
+        .b-tournament-card-4{
+
+          &::before{
+            position: absolute;
+            content: '';
+            top: -121px;
+            left: -21px;
+            width: 40px;
+            height: 120px;
+            background: url("../img/svg/standings-line-1.svg") 100% 0 no-repeat scroll;
+            z-index: 1;
+          }
+
+          &::after{
+            position: absolute;
+            content: '';
+            bottom: -121px;
+            left: -21px;
+            width: 40px;
+            height: 120px;
+            background: url("../img/svg/standings-line-1.svg") 100% 100% no-repeat scroll;
+            z-index: 1;
+          }
+
+        }
+
+      }
+
+      &:nth-child(4){
+        .b-tournament-card-4 + .b-tournament-card-4{
+          margin-top: 540px;
+        }
+        >.b-tournament-card-4:first-child{
+          margin-top: 700px;
+          z-index: 5;
+
+          &::before{
+            position: absolute;
+            content: '';
+            top: -321px;
+            left: -21px;
+            width: 40px;
+            height: 320px;
+            background: url("../img/svg/standings-line-1.svg") 100% 0 no-repeat scroll;
+            z-index: 1;
+          }
+
+          &::after{
+            position: absolute;
+            content: '';
+            bottom: -321px;
+            left: -21px;
+            width: 40px;
+            height: 320px;
+            background: url("../img/svg/standings-line-1.svg") 100% 100% no-repeat scroll;
+            z-index: 1;
+          }
+
+        }
+      }
+
+    }
+
+  }
+
+  &__container{
+    padding-bottom: fun-rem(25);
+    width: 1300px;
+  }
+
+  &__item{
+    position: relative;
+
+    &:nth-child(2){
+
+      .row{
+
+        >.col-3{
+          &:nth-child(2){
+
+            >.b-tournament-card-4:last-child{
+              margin-top: 146px;
+
+              &::before, &::after{
+                content: none;
+              }
+
+            }
+
+          }
+        }
+
+      }
+
+    }
+
+    &:nth-child(3){
+
+      .row{
+
+        >.col-3{
+          background: none;
+
+          &:nth-child(3){
+
+            >.b-tournament-card-4:last-child{
+              margin-top: 239px;
+
+              &::before, &::after{
+                content: none;
+              }
+
+            }
+
+          }
+        }
+
+      }
+
+    }
+
+    &:nth-child(4){
+
+      .row{
+
+        >.col-3{
+          &:nth-child(2){
+
+            >.b-tournament-card-4:last-child{
+              margin-top: 146px;
+
+              &::before, &::after{
+                content: none;
+              }
+
+            }
+
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  &__item + &__item{
+    margin-top: 50px;
+    padding-top: 60px;
+    border-top: 1px solid $var-color-1-l;
+  }
+
+  &__label{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: $var-font-2;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #EEF0F2;
+    text-align: center;
+    line-height: 1.1;
+
+  }
+
+  &__label-1{
+    @include font-size(52);
+  }
+
+  &__label-2{
+    @include font-size(26);
+  }
+
+  &__label-3{
+    background: #EEF0F2;
+    margin: 2px auto 1px;
+    width: 250px;
+    height: 5px;
+    border-radius: 5px;
+  }
+
+  &__label-4{
+    @include font-size(34);
+  }
+
+  &__label-5{
+    background: url("../img/svg/standings-bg-1.svg") 50% 50%/contain no-repeat scroll;
+    margin: 0 auto;
+    width: 53px;
+    height: 53px;
+  }
+
+}
+
+.b-tournament-box{
+  margin-bottom: fun-rem(30);
+
+  &__leader{
+    margin-bottom: fun-rem(40);
+  }
+
+  &__item{
+    margin-bottom: fun-rem(20);
+    border-bottom: 1px solid $var-color-1-l;
+  }
+
+}
+
+.b-tournament-box-2{
+
+  &__item{
+    margin-bottom: fun-rem(10);
+  }
+}
+
+.b-tournament-box-3{
+  margin-bottom: fun-rem(20);
+
+  &_border{
+    padding-bottom:  fun-rem(20);
+    border-bottom: 1px solid $var-color-5;
+  }
+}
+
+.b-tournament-box-4{
+  margin-bottom: fun-rem(40);
+
+  &__title{
+    margin-bottom: fun-rem(20);
+  }
+
+  &__item{
+    margin-bottom: fun-rem(20);
+  }
+}
+
+.b-tournament-box-5{
+  //background: url("../img/svg/stats-compare-bg.svg") 50% 45px no-repeat scroll;
+  margin-bottom: fun-rem(30);
+
+  &__select{
+    max-width: 420px;
+
+    .b-form-select__group{
+      margin-bottom: fun-rem(30);
+    }
+
+    &_r{
+      margin-left: auto;
+    }
+
+  }
+
+  &__player{
+    max-width: 420px;
+    margin-bottom: fun-rem(20);
+
+    &_r{
+      margin-left: auto;
+    }
+
+  }
+
+  //&__compare{}
+
+
+  &__header{
+    background: url("../img/svg/compare-bg-1-2.svg") 50% 70% no-repeat scroll;
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  @media (max-width: 767.98px){
+    &__select{
+      &_r{
+        margin-left: 0;
+      }
+    }
+
+    &__player{
+      &_r{
+        margin-left: 0;
+      }
+    }
+  }
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-tournament-position-6{
+  margin-bottom: fun-rem(30);
+
+  &__item{
+    margin-bottom: fun-rem(20);
+    padding-bottom: fun-rem(10);
+    border-bottom: 1px solid $var-color-1-l;
+  }
+
+}
+
+.b-tournament-playground-box{
+  margin-bottom: fun-rem(30);
+}

@@ -1,0 +1,1064 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// b-calendar
+////////////////////////////////////////////////
+
+// components
+//=============================================
+.b-calendar-card-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 125px;
+  max-width: 310px;
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__header{
+    padding: fun-rem(5);
+    flex: auto;
+    display: flex;
+  }
+
+  &__img{
+    margin-right: fun-rem(10);
+    flex: none;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__main{
+    flex: auto;
+    padding: fun-rem(5);
+  }
+
+  &__title{
+    min-height: 30px;
+
+    >a{
+      display: block;
+      font-family: $var-font-3;
+      @include font-size(12);
+      font-weight: 700;
+      color: $var-color-0;
+      text-transform: uppercase;
+      line-height: 1.2;
+
+      @include hover{
+        color: $var-color-1;
+      }
+
+    }
+
+  }
+
+  &__divider{
+    background-color: $var-color-1-l;
+    margin-bottom: fun-rem(3);
+    display: block;
+    margin-right: auto;
+    width: 60px;
+    height: 4px;
+    border-radius: 3px;
+  }
+
+  &__desc-1{
+    font-family: $var-font-3;
+    @include font-size(12);
+    font-weight: 700;
+    color: $var-color-1-l;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  &__desc-2{
+    font-family: $var-font-2;
+    @include font-size(10);
+    font-weight: 400;
+    color: $var-color-1-l;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+
+  &__info{
+    padding: fun-rem(5);
+
+    .b-control-info-1{
+      @include font-size(10);
+    }
+
+  }
+
+  @media (max-width: 1349.98px){
+    max-width: 100%;
+  }
+
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+
+}
+
+.b-calendar-card-2{
+  display: flex;
+  flex-direction: column;
+  height: 125px;
+  max-width: 310px;
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__header{
+    padding: fun-rem(10);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__bottom{
+
+  }
+
+  &__img{
+    flex: none;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__info{
+    flex: auto;
+    padding: 0 fun-rem(10);
+  }
+
+  &__title{
+    padding: 0 fun-rem(10) fun-rem(10);
+    text-align: center;
+
+    >a{
+      flex: auto;
+      display: block;
+      @include font-size(12);
+      font-family: $var-font-3;
+      color: $var-color-0;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.2;
+
+      @include hover-focus{
+        color: $var-color-1;
+      }
+
+    }
+
+  }
+
+  &__divider{
+    background-color: $var-color-1-l;
+    display: block;
+    margin: 0 auto fun-rem(3);
+    width: 60px;
+    height: 4px;
+    border-radius: 3px;
+  }
+
+  &__desc-1{
+    font-family: $var-font-3;
+    @include font-size(12);
+    font-weight: 700;
+    color: $var-color-1-l;
+    text-transform: uppercase;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  &__desc-2{
+    font-family: $var-font-2;
+    @include font-size(10);
+    font-weight: 400;
+    color: $var-color-1-l;
+    text-transform: uppercase;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  @media (max-width: 1349.98px){
+    max-width: 100%;
+  }
+
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-calendar-card-3{
+  padding: fun-rem(30) fun-rem(10) fun-rem(10);
+  font-family: $var-font-2;
+  border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+  //box-shadow: 0 0 8px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.24) ;
+
+  &__title{
+    margin-bottom: fun-rem(45);
+    @include font-size(18);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__divider{
+    margin-bottom: fun-rem(5);
+  }
+
+  &__place{
+    margin-bottom: fun-rem(20);
+    text-transform: uppercase;
+    @include font-size(18);
+    color: $var-color-1-l;
+  }
+
+  &__desc{
+    margin-bottom: fun-rem(25.8);
+    display: flex;
+    @include font-size(12);
+    text-transform: uppercase;
+    line-height: 1.3;
+    justify-content: space-between;
+  }
+
+  &__img{
+    margin-left: fun-rem(10);
+    flex: none;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__time{
+    position: relative;
+    margin: 0 fun-rem(-10) fun-rem(17);
+    padding: fun-rem(40) fun-rem(10);
+    background-color: #00AB96;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    min-height: 160px;
+  }
+
+  &__time-1{
+    flex: 1;
+    @include font-size(34);
+  }
+
+  &__time-2{
+    flex: 1;
+    @include font-size(72);
+  }
+
+  &__btn{
+    margin-bottom: fun-rem(10);
+    text-align: right;
+  }
+
+  @media (max-width: 1349.98px){
+    margin-top: fun-rem(20);
+
+    &__time{
+      padding: fun-rem(20) fun-rem(10);
+      min-height: auto;
+    }
+
+    &__title{
+      margin-bottom: fun-rem(15);
+    }
+  }
+
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+
+  @media (max-width: 575.98px){
+    &__time-1{
+      @include font-size(24);
+    }
+
+    &__time-2{
+      @include font-size(36);
+    }
+  }
+
+}
+
+.b-calendar-card-4{
+  padding: fun-rem(25) fun-rem(15) fun-rem(25);
+  font-family: $var-font-2;
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+  min-height: 355px;
+  text-align: center;
+  //box-shadow: 0 0 8px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.24) ;
+
+  &__img{
+    margin: 0 auto fun-rem(5);
+    flex: none;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title{
+    margin-bottom: fun-rem(0);
+    @include font-size(20);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  &__divider{
+    margin: 0 auto fun-rem(3);
+    background-color: $var-color-2;
+    display: block;
+    width: 87px;
+    height: 4px;
+    border-radius: 3px;
+  }
+
+  &__desc-1{
+    margin-bottom: fun-rem(15);
+    @include font-size(10);
+    text-transform: uppercase;
+    line-height: 1.3;
+    color: $var-color-1;
+  }
+
+  &__desc-2{
+    @include font-size(14);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.3;
+    color: $var-color-2;
+  }
+
+  //@media (max-width: 1349.98px){ }
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){ }
+
+}
+
+.b-calendar-card-5{
+  padding: fun-rem(10) fun-rem(15) fun-rem(5);
+  font-family: $var-font-2;
+  border: 1px solid $var-color-5;
+  color: $var-color-1-l;
+  border-radius: fun-rem(3);
+  max-width: 200px;
+  min-height: 130px;
+  text-align: center;
+  //box-shadow: 0 0 8px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.24) ;
+
+  &__1{
+    margin-bottom: fun-rem(2);
+    @include font-size(10);
+    text-transform: uppercase;
+  }
+
+  &__2{
+    margin-bottom: fun-rem(5);
+    @include font-size(34);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  &__3{
+    margin-bottom: fun-rem(2);
+    @include font-size(18);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  &__4{
+    @include font-size(14);
+    text-transform: uppercase;
+  }
+
+  &__divider{
+    margin: 0 auto fun-rem(3);
+    background-color: $var-color-2;
+    display: block;
+    width: 87px;
+    height: 4px;
+    border-radius: 3px;
+  }
+
+  //@media (max-width: 1349.98px){ }
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){ }
+
+}
+
+.b-calendar-big-1{
+  margin-bottom: fun-rem(30);
+
+  .table{
+    text-align: center;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+
+    th,
+    td {
+      padding: 0;
+      vertical-align: top;
+      min-width: 150px;
+    }
+
+    th {
+      padding: 15px 3px;
+      vertical-align: top;
+    }
+
+    td {
+
+      > div{
+        padding: 10px 3px 5px;
+        min-height: 194px;
+      }
+
+    }
+
+    .thead-light th {
+      color: #fff;
+      background-color: $var-color-1;
+      border: 1px solid $var-color-1-l;
+    }
+
+  }
+
+  .table-bordered {
+
+    td {
+      border: 1px solid $var-color-1;
+    }
+
+  }
+
+  &__team{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__team-1{
+    @include font-size(18);
+    font-weight: 700;
+  }
+
+  &__team-2{
+    padding-bottom: fun-rem(3);
+    @include font-size(30);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  &__team-3{
+    @include font-size(12);
+    font-weight: 300;
+  }
+
+  //&__date{}
+
+  &__date-1{
+    @include font-size(18);
+    font-weight: 700;
+  }
+
+  &__date-2{
+    @include font-size(14);
+    font-weight: 400;
+  }
+
+  //&__time{}
+
+  &__time-1{
+    font-family: $var-font-1;
+    @include font-size(20);
+    font-weight: 500;
+    line-height: 1.15;
+  }
+
+  &__time-2{
+    padding-bottom: fun-rem(3);
+    @include font-size(12);
+    font-weight: 300;
+  }
+
+  &__time-3{
+    padding-top: 46px;
+    font-family: $var-font-1;
+    @include font-size(20);
+    font-weight: 500;
+    line-height: 1.15;
+    color: $var-color-3;
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  @media (max-width: 767.98px){
+
+    .table{
+      td {
+        > div{
+          min-height: 175px;
+        }
+      }
+    }
+
+    &__time-1{
+      @include font-size(16);
+    }
+  }
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-calendar-big-2{
+  margin-bottom: fun-rem(30);
+
+  .table{
+    text-align: center;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+
+    th,
+    td {
+      padding: 0;
+      vertical-align: top;
+      min-width: 184px;
+    }
+
+    th {
+      padding: 15px 3px;
+      vertical-align: middle;
+      height: 72px;
+
+      &:first-child{
+        padding: 0;
+      }
+
+    }
+
+    td {
+
+      > div{
+        padding: 10px 3px 5px;
+        min-height: 194px;
+        height: 100%;
+      }
+
+    }
+
+    .thead-light th {
+      color: #fff;
+      background-color: $var-color-1;
+      border: 1px solid $var-color-1-l;
+    }
+
+    tbody {
+      > tr {
+        > td:last-child {
+          color: $var-color-1;
+        }
+      }
+    }
+
+  }
+
+  .table-bordered {
+
+    td {
+      border: 1px solid $var-color-1;
+    }
+
+  }
+
+  &__row{
+    display: flex;
+    align-items: center;
+  }
+
+  &__col{
+    flex: 1;
+    padding: 12px 0;
+  }
+
+  &__col + &__col{
+    border-left: 1px solid $var-color-1-l;
+  }
+
+  &__time{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__time-1{
+    padding-bottom: fun-rem(2);
+    @include font-size(12);
+    font-weight: 300;
+  }
+
+  &__time-2{
+    padding-bottom: fun-rem(2);
+    font-family: $var-font-1;
+    @include font-size(20);
+    font-weight: 500;
+    line-height: 1.15;
+  }
+
+  &__time-3{
+    padding-bottom: 25px;
+    font-family: $var-font-1;
+    @include font-size(20);
+    font-weight: 500;
+    line-height: 1.15;
+    color: $var-color-3;
+  }
+
+  &__time-date{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    @include font-size(30);
+    font-weight: 700;
+    line-height: 1.1;
+    color: $var-color-0;
+
+    &_next{
+      color: #A4A9AD;
+    }
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  @media (max-width: 991.98px){
+
+    .table{
+      th,
+      td {
+        min-width: 154px;
+      }
+      td {
+        > div{
+          min-height: 154px;
+        }
+      }
+    }
+
+    &__time-2{
+      @include font-size(16);
+    }
+
+    &__time-3{
+      @include font-size(16);
+    }
+
+  }
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+
+}
+
+.b-calendar-big-3{
+  margin-bottom: fun-rem(30);
+
+  .table{
+    text-align: center;
+    font-family: $var-font-2;
+    text-transform: uppercase;
+    border-bottom: 1px solid $var-color-1-l;
+
+    th,
+    td {
+      padding: 0;
+      vertical-align: middle;
+    }
+
+    th {
+      padding: 15px 3px;
+      vertical-align: middle;
+      height: 72px;
+
+      &:first-child{
+        padding: 0;
+      }
+
+    }
+
+    td {
+      height: 34px;
+    }
+
+    .thead-light th {
+      color: #fff;
+      background-color: $var-color-1;
+      border: 1px solid $var-color-1-l;
+    }
+
+    tbody {
+
+      > tr {
+
+        td{
+          min-width: 220px;
+        }
+
+        >[rowspan]{
+          border-top: 1px solid $var-color-1-l;
+          border-bottom: 1px solid $var-color-1-l;
+        }
+
+        > td{
+          border-top: 1px solid transparent;
+          border-right: 1px solid $var-color-1-l;
+
+          &:first-child {
+            @include font-size(18);
+            font-weight: 300;
+            min-width: 133px;
+            width: 133px;
+            border: 1px solid $var-color-1-l;
+          }
+
+
+        }
+
+        &:nth-child(n + 5):nth-child(-n + 8),
+        &:nth-child(n + 13):nth-child(-n + 16),
+        &:nth-child(n + 21):nth-child(-n + 24),
+        &:nth-child(n + 29):nth-child(-n + 32),
+        &:nth-child(n + 37):nth-child(-n + 40),
+        &:nth-child(n + 45):nth-child(-n + 48),
+        &:nth-child(n + 53):nth-child(-n + 56),
+        &:nth-child(n + 61):nth-child(-n + 64)
+        {
+          >td:first-child{
+            background: #EEF0F2;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  &__row{
+    display: flex;
+    align-items: center;
+  }
+
+  &__col{
+    flex: 1;
+    padding: 12px 0;
+  }
+
+  &__col + &__col{
+    border-left: 1px solid $var-color-1-l;
+  }
+
+  &__1{
+    padding-bottom: fun-rem(3);
+    @include font-size(12);
+    font-weight: 300;
+    line-height: 1.3;
+  }
+
+  &__2{
+    @include font-size(18);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__3{
+    @include font-size(18);
+    font-weight: 300;
+    line-height: 1.3;
+  }
+
+}
+
+.b-calendar-big-nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a{
+    @include transition();
+    user-select: none;
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+  }
+
+  &__prev, &__next{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a{
+      display: block;
+
+      @include hover{
+        opacity: .8;
+      }
+
+    }
+
+  }
+
+  &__main{
+    position: relative;
+    padding: 0 fun-rem(20);
+    font-family: $var-font-2;
+    @include font-size(34);
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.1;
+
+
+    >span{
+      display: block;
+      @include font-size(14);
+      font-weight: 400;
+      text-align: right;
+    }
+
+  }
+
+}
+
+.b-calendar-mini{
+  margin-bottom: fun-rem(10);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+
+  a{
+    user-select: none;
+    @include transition();
+
+    &:focus,
+    &.focus {
+      outline: 0;
+    }
+
+  }
+
+  &__prev, &__next{
+    flex: none;
+
+    >a{
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+
+      @include hover-focus{
+        opacity: .85;
+      }
+
+    }
+
+  }
+
+  &__main{
+    flex: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 1349.98px){
+    &__prev, &__next{
+      >a{
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+  @media (max-width: 1199.98px){
+    max-width: 310px;
+  }
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-calendar-list{
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 280px;
+  list-style: none;
+  border-left: 5px solid $var-color-1;
+
+  &__item{
+    display: flex;
+    position: relative;
+    margin-bottom: fun-rem(1);
+    padding-left: fun-rem(55);
+    font-family: $var-font-2;
+    @include font-size(18);
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background: url("../img/svg/program-icon.svg") 50% 50% no-repeat scroll;
+    }
+
+  }
+
+  &__time{
+    flex: none;
+    display: inline-block;
+    margin: 0 fun-rem(20) 0 0;
+    color: $var-color-1;
+    font-weight: 700;
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  @media (max-width: 991.98px){
+    padding-right: 0;
+    &__item{
+      @include font-size(16);
+    }
+  }
+  //@media (max-width: 767.98px){}
+  //@media (max-width: 575.98px){}
+
+}
+
+
+// layout
+//=============================================
+.b-calendar-box-1{
+  margin-bottom: fun-rem(40);
+  border: 1px solid $var-color-5;
+  border-radius: 3px;
+
+
+  &__row{
+    display: flex;
+  }
+
+  &__img{
+    flex: none;
+    width: 310px;
+    max-height: 280px;
+    margin-right: fun-rem(20);
+  }
+
+  &__main{
+    padding: fun-rem(20) fun-rem(20) fun-rem(20) 0;
+    flex: auto;
+
+    p{
+      margin-bottom: fun-rem(30);
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  @media (max-width: 767.98px){
+    &__row{
+      flex-direction: column;
+    }
+    &__main{
+      padding: fun-rem(20) fun-rem(10);
+      flex: auto;
+      @include font-size(14);
+
+      p{
+        margin-bottom: fun-rem(20);
+
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  //@media (max-width: 575.98px){}
+
+}
+
+.b-calendar-card-4-box{
+  margin-bottom: fun-rem(20);
+
+  .b-calendar-card-4{
+    margin-bottom: fun-rem(20);
+  }
+
+}

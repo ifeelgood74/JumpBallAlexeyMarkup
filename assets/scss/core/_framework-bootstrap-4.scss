@@ -1,0 +1,457 @@
+@import "./config";
+
+//=============================================
+// Custom variables Bootstrap 4 - no !default
+//=============================================
+html{
+  font-size: $var-font-size;
+}
+
+//=============================================
+// v4.5.2
+// Bootstrap 4 variables == no !default
+//=============================================
+$primary: $var-color-1;
+
+$body-color: $var-color-0;
+
+//$link-color:            theme-color("primary") !default;
+//$link-decoration:       none !default;
+//$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-decoration:   none; //underline !default;
+
+//$border-radius:    .25rem !default;
+//$border-radius-lg: .3rem !default;
+//$border-radius-sm:  .2rem !default;
+
+$transition-base:     all .15s ease-in-out; //all .2s ease-in-out !default;
+//$transition-fade:     opacity .15s linear !default;
+//$transition-collapse: height .35s ease !default;
+
+//$transition-base:             all .2s ease-in-out !default;
+//$transition-fade:             opacity .15s linear !default;
+//$transition-collapse:         height .35s ease !default;
+
+$font-family-sans-serif:      $var-font-1;
+//$font-family-base:            $font-family-sans-serif !default;
+//$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+//$font-size-lg:                $font-size-base * 1.25 !default;
+//$font-size-sm:                $font-size-base * .875 !default;
+
+//$headings-margin-bottom:      $spacer / 2 !default;
+//$headings-font-family:        null !default;
+//$headings-font-weight:        500 !default;
+//$headings-line-height:        1.2 !default;
+$headings-color:              $var-color-1; //null !default;
+
+$navbar-padding-y:  0; //$spacer / 2 !default;
+$navbar-padding-x:  0; //$spacer !default;
+
+// Grid breakpoints
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1350px
+);
+
+// Grid containers
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1320px
+);
+
+// Grid columns
+$grid-gutter-width:           20px;
+
+// Breadcrumbs
+$breadcrumb-font-size:              fun-rem(12);
+$breadcrumb-padding-y:              0;
+$breadcrumb-padding-x:              0;
+$breadcrumb-item-padding:           .4rem !default;
+$breadcrumb-margin-bottom:          0;
+$breadcrumb-bg:                     transparent;
+$breadcrumb-divider-color:          $var-color-4;
+$breadcrumb-active-color:           $var-color-4;
+//$breadcrumb-divider:                quote("/") !default;
+
+
+//=============================================
+// @import bootstrap
+//=============================================
+@import "../../lib-jquery/bootstrap-4/scss/functions";
+@import "../../lib-jquery/bootstrap-4/scss/variables";
+@import "../../lib-jquery/bootstrap-4/scss/mixins";
+@import "../../lib-jquery/bootstrap-4/scss/root";
+@import "../../lib-jquery/bootstrap-4/scss/reboot";
+@import "../../lib-jquery/bootstrap-4/scss/type";
+@import "../../lib-jquery/bootstrap-4/scss/images";
+@import "../../lib-jquery/bootstrap-4/scss/code";
+@import "../../lib-jquery/bootstrap-4/scss/grid";
+@import "../../lib-jquery/bootstrap-4/scss/tables";
+@import "../../lib-jquery/bootstrap-4/scss/forms";
+@import "../../lib-jquery/bootstrap-4/scss/buttons";
+@import "../../lib-jquery/bootstrap-4/scss/transitions";
+@import "../../lib-jquery/bootstrap-4/scss/dropdown";
+@import "../../lib-jquery/bootstrap-4/scss/button-group";
+@import "../../lib-jquery/bootstrap-4/scss/input-group";
+@import "../../lib-jquery/bootstrap-4/scss/custom-forms";
+@import "../../lib-jquery/bootstrap-4/scss/nav";
+@import "../../lib-jquery/bootstrap-4/scss/navbar";
+@import "../../lib-jquery/bootstrap-4/scss/card";
+@import "../../lib-jquery/bootstrap-4/scss/breadcrumb";
+@import "../../lib-jquery/bootstrap-4/scss/pagination";
+@import "../../lib-jquery/bootstrap-4/scss/badge";
+@import "../../lib-jquery/bootstrap-4/scss/jumbotron";
+@import "../../lib-jquery/bootstrap-4/scss/alert";
+@import "../../lib-jquery/bootstrap-4/scss/progress";
+@import "../../lib-jquery/bootstrap-4/scss/media";
+@import "../../lib-jquery/bootstrap-4/scss/list-group";
+@import "../../lib-jquery/bootstrap-4/scss/close";
+@import "../../lib-jquery/bootstrap-4/scss/toasts";
+@import "../../lib-jquery/bootstrap-4/scss/modal";
+@import "../../lib-jquery/bootstrap-4/scss/tooltip";
+@import "../../lib-jquery/bootstrap-4/scss/popover";
+@import "../../lib-jquery/bootstrap-4/scss/carousel";
+@import "../../lib-jquery/bootstrap-4/scss/spinners";
+@import "../../lib-jquery/bootstrap-4/scss/utilities";
+@import "../../lib-jquery/bootstrap-4/scss/print";
+
+
+//=============================================
+// Custom style Bootstrap 4
+//=============================================
+
+//tables
+//=============================================
+
+//.b-table{
+//
+//  .table {
+//    width: 100%;
+//    margin-bottom: $spacer;
+//    color: $table-color;
+//    background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+//
+//    th,
+//    td {
+//      padding: $table-cell-padding;
+//      vertical-align: top;
+//      border-top: $table-border-width solid $table-border-color;
+//    }
+//
+//    thead th {
+//      vertical-align: bottom;
+//      border-bottom: (2 * $table-border-width) solid $table-border-color;
+//    }
+//
+//    tbody + tbody {
+//      border-top: (2 * $table-border-width) solid $table-border-color;
+//    }
+//  }
+//
+//}
+
+
+// forms
+//=============================================
+
+/*.b-form{
+
+  .form-control {
+    display: block;
+    width: 100%;
+    height: $input-height;
+    padding: $input-padding-y $input-padding-x;
+    font-family: $input-font-family;
+    @include font-size($input-font-size);
+    font-weight: $input-font-weight;
+    line-height: $input-line-height;
+    color: $input-color;
+    background-color: $input-bg;
+    background-clip: padding-box;
+    border: $input-border-width solid $input-border-color;
+
+    // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+    @include border-radius($input-border-radius, 0);
+
+    @include box-shadow($input-box-shadow);
+    @include transition($input-transition);
+
+    // Placeholder
+    &::placeholder {
+      color: $input-placeholder-color;
+      // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+      opacity: 1;
+    }
+
+  }
+
+}*/
+
+
+// buttons
+//=============================================
+//$input-btn-focus-width: 0;  ==убрать везде shadow, но тогда добавить на фокус какой-то стиль
+
+/*@mixin mix-button-variant-bs($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%)) {
+  color: color-yiq($background);
+  @include gradient-bg($background);
+  border-color: $border;
+  @include box-shadow($btn-box-shadow);
+
+  @include hover() {
+    color: color-yiq($hover-background);
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+  }
+
+  &:focus,
+  &.focus {
+    color: color-yiq($hover-background);
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+    @if $enable-shadows {
+      @include box-shadow($btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5));
+    } @else {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
+    }
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    color: color-yiq($background);
+    background-color: $background;
+    border-color: $border;
+    // Remove CSS gradients if they're enabled
+    @if $enable-gradients {
+      background-image: none;
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: color-yiq($active-background);
+    background-color: $active-background;
+    @if $enable-gradients {
+      background-image: none; // Remove the gradient for the pressed/active state
+    }
+    border-color: $active-border;
+
+    &:focus {
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        @include box-shadow($btn-active-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5));
+      } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
+        box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
+      }
+    }
+  }
+}*/
+
+/*@mixin mix-button-variant-1(
+  $color,
+  $background,
+  $border,
+  $hover-color,
+  $hover-background,
+  $hover-border,
+  $active-color: $hover-color,
+  $active-background: darken($hover-background, 5%),
+  $active-border: darken($hover-background, 5%)
+) {
+  color: $color; // color-yiq($background);
+  @include gradient-bg($background);
+  border-color: $border;
+  @include box-shadow($btn-box-shadow);
+
+  @include hover {
+    color: $hover-color; // color-yiq($hover-background);
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+  }
+
+  &:focus,
+  &.focus {
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($hover-background), $hover-background, 15%), .25);
+    } @else {
+      box-shadow: none;// 0 0 0 $btn-focus-width rgba(mix(color-yiq($hover-background), $hover-background, 15%), .25);
+    }
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    color: $color;// color-yiq($background);
+    background-color: $background;
+    border-color: $border;
+    // Remove CSS gradients if they're enabled
+    @if $enable-gradients {
+      background-image: none;
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $active-color; // darken($var-color-1-d, 4%); //color-yiq($active-background);
+    background-color: $active-background;
+    @if $enable-gradients {
+      background-image: none; // Remove the gradient for the pressed/active state
+    }
+    border-color: $active-border;
+
+    &:focus {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($active-background), $active-background, 15%), .25);
+      } @else {
+        box-shadow: none;//0 0 0 $btn-focus-width rgba(mix(color-yiq($active-background), $active-background, 15%), .25);
+      }
+    }
+  }
+}*/
+
+/*.btn-1{
+  @include mix-button-variant-1(
+                  #fff,
+                  $var-color-1,
+                  $var-color-1,
+                  #fff,
+                  $var-color-1-btn-hover,
+                  $var-color-1-btn-hover,
+                  #fff,
+                  $var-color-1-btn-active,
+                  $var-color-1-btn-active,
+  );
+  font-size: fun-rem(21);
+  font-weight: 500;
+  padding: fun-rem(.75) fun-rem(8);
+  text-transform: uppercase;
+
+  @include media-breakpoint-down(xl) {
+    @include font-size(19);
+  }
+
+  @include media-breakpoint-down(lg) {
+    @include font-size(19);
+  }
+
+  @include media-breakpoint-down(md) {
+    @include font-size(18);
+  }
+
+  @include media-breakpoint-down(sm) {
+    @include font-size(17);
+  }
+
+  @include media-breakpoint-down(xs) {
+    @include font-size(16);
+  }
+
+}*/
+
+
+//navbar
+//=============================================
+
+
+// breadcrumb
+//=============================================
+/*.b-breadcrumb{
+  margin-bottom: fun-rem(36);
+
+  .breadcrumb{
+    font-weight: 500;
+  }
+
+  .breadcrumb-item{
+
+    >a{
+      color: $var-color-0;
+      text-decoration: underline;
+      @include transition();
+
+      @include hover-focus{
+        color: $var-color-1;
+        text-decoration: underline;
+      }
+
+    }
+
+  }
+
+  // mq
+  @include media-breakpoint-down(sm){
+    margin-bottom: fun-rem(18);
+    @include button-size(12);
+  }
+
+}*/
+
+
+// pagination
+//=============================================
+/*.b-pagination{
+
+  .pagination{
+    justify-content: center;
+  }
+
+  .page-item{
+
+    .page-link{
+      margin: 0 fun-rem(10);
+      border-radius: fun-rem(4);
+      @include rfs(18);
+      font-weight: 700;
+    }
+
+  }
+
+}*/
+
+
+// modal
+//=============================================
+
+/*.b-modal{
+
+  .modal-content{
+
+    >.btn-link{
+      padding: fun-rem(4);
+      color: #fff;
+      @include rfs(24);
+      position: absolute;
+      top: -30px;
+      right: -30px;
+    }
+
+    .close{
+      position: absolute;
+      float: none;
+      top: fun-rem(15);
+      right: fun-rem(15);
+      text-shadow: none;
+      opacity: .5;
+
+      @include hover{
+        opacity: .9;
+      }
+
+    }
+
+  }
+
+}*/

@@ -1,0 +1,89 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// b-statistics
+////////////////////////////////////////////////
+//=============================================
+
+.b-statistics-card-1{
+  padding: 10px 10px 2px;
+  border: 1px solid $var-color-1-l;
+  border-radius: fun-rem(3);
+
+  .b-title-3{
+    margin-bottom: fun-rem(5);
+  }
+
+  &__row{
+    margin-right: -10px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item{
+    margin-right: 6px;
+    margin-bottom: 8px;
+    padding: 2px 1px;
+    width: 94px;
+    text-align: center;
+    border: 1px solid $var-color-5;
+    border-radius: fun-rem(3);
+  }
+
+  &__title{
+    @include font-size(34);
+    line-height: 1.1;
+  }
+
+  &__desc{
+    font-family: $var-font-3;
+    @include font-size(14);
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+}
+
+.b-statistics-card-2 {
+  padding: fun-rem(10) fun-rem(10) 0;
+  border: 1px solid $var-color-5;
+  border-radius: fun-rem(3);
+
+  .b-title-3{
+    margin-bottom: fun-rem(6.4);
+  }
+
+  &__row {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin-right: fun-rem(15);
+    font-family: $var-font-2;
+    width: 70px;
+    text-align: center;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+  }
+
+  &__title {
+    margin-bottom: 1.5px;
+    @include font-size(26);
+    font-weight: 700;
+  }
+
+  &__desc {
+    margin-bottom: 1.5px;
+    @include font-size(12);
+    color: $var-color-1-l;
+    text-transform: uppercase;
+  }
+
+}

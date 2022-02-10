@@ -1,0 +1,47 @@
+@import "../my-var-mix";
+@import "../bootstrap-4/mixins";
+
+//////////////////////////////////////////////////////////////
+// Font Awesome 5 Free - scss
+//////////////////////////////////////////////////////////////
+
+.test-fa5-user{
+  @extend %fa-icon;
+  @extend .fas;
+
+  &::before {
+    content: fa-content($fa-var-user);
+  }
+}
+
+
+.test-fa5-twitter {
+  @extend %fa-icon;
+  @extend .fab;
+
+  &:before {
+    content: fa-content($fa-var-twitter);
+  }
+}
+
+
+.test-fa5-before {
+  position: relative;
+
+  &::before {
+    @extend %fa-icon;
+    @extend .fab;
+    @extend .fas;
+    @extend .far;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    font-family: "Font Awesome 5 Free", sans-serif;
+    content: "\f5d0";
+    //font-family: "Font Awesome 5 Pro", sans-serif;
+    //content: fa-content($fa-var-user);
+    @include font-size(18);
+    color: red;
+  }
+
+}

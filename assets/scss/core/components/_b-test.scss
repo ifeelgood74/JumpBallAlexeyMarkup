@@ -1,0 +1,299 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// b-test styles
+////////////////////////////////////////////////
+
+// test - index.html, components.html
+//=============================================
+.b-test-content{
+  padding: fun-rem(45) 0;
+  border-bottom: 1px solid rgba(17, 17, 17, .12);
+
+  p{
+    margin-bottom: fun-rem(7);
+    @include font-size(15);
+
+    >a{
+      display: inline-block;
+    }
+
+  }
+
+  a{
+    color: $var-color-0;
+    transition: $transition-base;
+
+    &:hover{
+      color: $var-color-1;
+    }
+
+  }
+
+  h1{
+    font-size: 28px;
+  }
+
+  h2{
+    font-size: 26px;
+  }
+
+  h3{
+    font-size: 24px;
+  }
+
+  h4{
+    font-size: 22px;
+  }
+
+  h5{
+    margin-top: fun-rem(20);
+  }
+
+  &__page{
+
+    >p{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      >a{
+        margin-left: fun-rem(10);
+      }
+
+    }
+
+  }
+
+  &__hidden{
+    opacity: .5;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: fun-rem(35) 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: fun-rem(20) 0;
+  }
+
+}
+
+.b-test-block{
+  padding: fun-rem(45) 0;
+  border-bottom: 1px solid rgba(17, 17, 17, .12);
+
+  h6{
+    margin-bottom: 20px;
+    //font-size: 25px;
+    color: red;
+
+    a {
+      color: red;
+    }
+
+  }
+
+  &.b-bg-0, &.b-bg-1, &.b-bg-2{
+
+    h6{
+      color: yellow;
+
+      a {
+        color: yellow;
+      }
+
+    }
+
+  }
+
+  &__light {
+    background: #f3f3f3;
+    border-bottom: 1px solid #d4d4d4;
+  }
+
+  &__dark {
+    background: #333333;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  &__img{
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    span{
+      display: inline-block;
+      flex: none;
+    }
+
+  }
+
+}
+
+.b-test-block-nav{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  a{
+    display: block;
+  }
+
+  >div{
+    flex: none;
+    padding-right: 12px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    border-right: 1px solid $var-color-1-l;
+  }
+
+}
+
+.b-test-date{
+  font-size: 14px;
+  font-weight: 400;
+  color: #999;
+}
+
+.b-test-header, .b-test-footer{
+  background: #eeeeee;
+  padding: fun-rem(40) 0;
+}
+
+.b-test-grid{
+  background: #e6eed8;
+  padding: 30px 0;
+  margin: 30px 0;
+
+  &__col{
+    background: rgba(95, 16, 238, 0.65);
+    min-height: 80px;
+    width: 100%;
+    color: #fff;
+  }
+
+}
+
+.b-test-col{
+  background: yellow;
+  width: 100%;
+  height: 10px;
+}
+
+.b-test-info{
+  background: rgba(255, 255, 0, 0.4);
+  padding: fun-rem(3) 0;
+  font-size: 12px;
+  text-align: center;
+  color: red;
+}
+
+.b-test-box{
+
+  h1{
+    margin: 0 0 15px;
+    text-transform: uppercase;
+  }
+
+  h2{
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+
+}
+
+.b-test-list{
+
+  >li{
+
+    >a{
+      display: block;
+    }
+
+  }
+
+}
+
+.b-test-status{
+  margin-right: 10px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #FF9900;
+;
+
+  &_pre-done{
+    background-color: #03ea03;
+  }
+
+  &_done{
+    background-color: green;
+  }
+
+  &_notdone{
+    background-color: red;
+  }
+
+}
+
+.b-test-status-box{
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 0 0 10px;
+
+  &__item{
+    margin-right: fun-rem(15);
+    display: flex;
+    align-items: center;
+    line-height: 1;
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  @media (max-width: 767.98px){
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  //@media (max-width: 575.98px){}
+
+}
+
+
+// RFS test
+//////////////////////////////////////////////////////////////
+.my-rfs-0 {
+  font-size: fun-rem(32);
+}
+
+.my-rfs-1 {
+  @include rfs(32);
+}
+
+.my-rfs-2 {
+  @include font-size(32px);
+}
+
+.my-rfs-3 {
+  @include responsive-font-size(2rem);
+}
+
+.my-rfs-p{
+  //@include rfs(16);
+  @include responsive-font-size(16);
+}
+
+
+// Autoprefixer test
+//////////////////////////////////////////////////////////////
+//.b-test-flex{
+//  display: flex;
+//  align-items: center;
+//  justify-content: space-between;
+//  transition: transform 1s;
+//  transform: rotate(7deg);
+//}

@@ -1,0 +1,304 @@
+@import "../config";
+@import "../../../lib-jquery/bootstrap-4/scss/mixins";
+
+////////////////////////////////////////////////
+// feature
+////////////////////////////////////////////////
+
+// components
+//=============================================
+.b-feature-1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $var-font-2;
+  font-weight: 300;
+  max-width: 424px;
+
+  &__icon{
+    flex: none;
+    margin-right: fun-rem(2);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__progress{
+    background-color: rgba(20, 110, 180, .2);
+    border-top: fun-rem(2) solid #FFFFFF;
+    border-bottom: fun-rem(2) solid #FFFFFF;
+    flex: auto;
+    width: 100%;
+    overflow: hidden;
+    border-radius: fun-rem(5);
+    //padding: fun-rem(2) 0;
+  }
+
+  &__progress-bar{
+    position: relative;
+    margin-top: fun-rem(-2);
+    margin-bottom: fun-rem(-2);
+    background-color: $var-color-1;
+    height: fun-rem(40);
+    border: fun-rem(2) solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: fun-rem(5);
+    display: flex;
+    align-items: center;
+    padding: fun-rem(1) fun-rem(10);
+    font-family: $var-font-3;
+    @include font-size(20);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  &__score{
+    margin-left: fun-rem(2);
+    flex: none;
+    width: 55px;
+    text-align: center;
+    @include font-size(24);
+    color: $var-color-1;
+
+  }
+
+  &_accent{
+
+    .b-feature-1__progress-bar{
+      background-color: $var-color-3;
+    }
+    .b-feature-1__progress{
+      background-color: rgba(204, 2, 2, .2);
+    }
+    .b-feature-1__score{
+      color: $var-color-3;
+    }
+  }
+
+  @media (max-width: 1349.98px){
+    max-width: 100%;
+  }
+
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+
+  @media (max-width: 575.98px){
+    &__progress-bar{
+      @include font-size(14);
+    }
+  }
+
+}
+
+.b-feature-card-1{
+
+  >.b-feature-1{
+    margin-bottom: fun-rem(12);
+  }
+
+  //@media (max-width: 1349.98px){}
+  //@media (max-width: 1199.98px){}
+  //@media (max-width: 991.98px){}
+  //@media (max-width: 767.98px){}
+  @media (max-width: 575.98px){
+    >.b-feature-1{
+      margin-bottom: fun-rem(6);
+    }
+  }
+
+}
+
+.b-feature-2{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $var-font-2;
+  font-weight: 300;
+  max-width: 424px;
+
+  &__icon{
+    flex: none;
+    margin-right: fun-rem(4);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__progress{
+    flex: auto;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__progress-bar{
+    background-color: $var-color-1;
+    height: fun-rem(40);
+    border: fun-rem(2) solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: fun-rem(8);
+    display: flex;
+    align-items: center;
+    padding: fun-rem(2) fun-rem(7);
+    @include font-size(12);
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  &__score{
+    margin-left: fun-rem(4);
+    flex: none;
+    width: 50px;
+    text-align: center;
+    @include font-size(30);
+    font-weight: 700;
+    color: $var-color-1;
+
+  }
+
+  &_accent{
+
+    .b-feature-2__progress-bar{
+      background-color: $var-color-3;
+    }
+    .b-feature-2__score{
+      color: $var-color-3;
+    }
+  }
+
+}
+
+.b-feature-card-2{
+
+  >.b-feature-1{
+    margin-bottom: fun-rem(10);
+  }
+
+}
+
+.b-feature-3{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $var-font-2;
+  font-weight: 300;
+  max-width: 424px;
+
+  &__last{
+    padding-left: fun-rem(42);
+    @include font-size(30);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__last-score{
+    @include font-size(30);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__icon{
+    flex: none;
+    margin-right: fun-rem(4);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__progress{
+    background-color: rgba(20, 110, 180, 0.2);
+    padding: fun-rem(2) 0;
+    flex: auto;
+    width: 100%;
+    border-radius: fun-rem(5);
+    overflow: hidden;
+  }
+
+  &__progress-bar{
+    background-color: $var-color-1;
+    height: fun-rem(40);
+    border-right: fun-rem(2) solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: fun-rem(5);
+    display: flex;
+    align-items: center;
+    padding: fun-rem(2) fun-rem(7);
+    font-family: $var-font-3;
+    @include font-size(20);
+    font-weight: 300;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    margin-top: fun-rem(-2);
+    margin-bottom: fun-rem(-2);
+  }
+
+  &__score{
+    margin-left: fun-rem(4);
+    flex: none;
+    width: 52px;
+    text-align: center;
+    @include font-size(30);
+    font-weight: 700;
+    color: $var-color-1;
+  }
+
+  &_accent{
+
+    .b-feature-3__progress-bar{
+      background-color: $var-color-3;
+    }
+    .b-feature-3__score{
+      color: $var-color-3;
+    }
+  }
+
+  @media (max-width: 767.98px){
+    &__progress-bar{
+      @include font-size(16);
+    }
+
+    &__last{
+      @include font-size(20);
+    }
+
+    &__last-score{
+      @include font-size(18);
+    }
+
+    &__score{
+      @include font-size(28);
+    }
+  }
+
+  @media (max-width: 575.98px){
+    &__progress-bar{
+      @include font-size(14);
+    }
+    &__score{
+      @include font-size(22);
+    }
+  }
+
+}
+
+
+// layout
+//=============================================
+.b-feature-box{
+  margin-bottom: fun-rem(40);
+
+  &__item{
+    margin-bottom: fun-rem(12);
+  }
+
+}
